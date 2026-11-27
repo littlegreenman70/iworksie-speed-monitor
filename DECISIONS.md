@@ -14,3 +14,4 @@
 12. **Core Checks registry not used.** The build plan listed Speed Monitor as a Checks user, but speed results are a time series per URL, not pass/fail checks, so the plugin uses only core's menu, page shell, UI helpers and assets. A Site Health bridge can be added later if wanted.
 13. **Capability `manage_options`** (per site, also on multisite where each site has its own table and settings).
 14. **Migrated sites.** Saved URLs are not rewritten if the site's domain changes; a search-replace during migration updates them, and pages on a foreign host are rejected when settings are next saved.
+15. **Prefix is `iwiesp` / `IWIESP_`** (sp = Speed Monitor; `iwiesm` belongs to SMTP).
