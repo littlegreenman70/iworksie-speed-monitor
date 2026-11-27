@@ -20,7 +20,7 @@ use IWorksIE\SpeedMonitor\Support\Metrics;
  */
 final class Actions {
 
-	const NOTICE_TRANSIENT = 'iwiesm_notice_';
+	const NOTICE_TRANSIENT = 'iwiesp_notice_';
 
 	/**
 	 * Register hooks.
@@ -28,10 +28,10 @@ final class Actions {
 	 * @return void
 	 */
 	public function hooks() {
-		add_action( 'admin_post_iwiesm_save_settings', array( $this, 'save_settings' ) );
-		add_action( 'admin_post_iwiesm_export_csv', array( $this, 'export_csv' ) );
-		add_action( 'admin_post_iwiesm_clear_history', array( $this, 'clear_history' ) );
-		add_action( 'wp_ajax_iwiesm_run_test', array( $this, 'run_test' ) );
+		add_action( 'admin_post_iwiesp_save_settings', array( $this, 'save_settings' ) );
+		add_action( 'admin_post_iwiesp_export_csv', array( $this, 'export_csv' ) );
+		add_action( 'admin_post_iwiesp_clear_history', array( $this, 'clear_history' ) );
+		add_action( 'wp_ajax_iwiesp_run_test', array( $this, 'run_test' ) );
 	}
 
 	/**
@@ -52,10 +52,10 @@ final class Actions {
 	 */
 	public function save_settings() {
 		$this->require_cap();
-		check_admin_referer( 'iwiesm_save_settings' );
+		check_admin_referer( 'iwiesp_save_settings' );
 
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitised field by field in Settings::sanitize().
-		$input = isset( $_POST['iwiesm'] ) && is_array( $_POST['iwiesm'] ) ? wp_unslash( $_POST['iwiesm'] ) : array();
+		$input = isset( $_POST['iwiesp'] ) && is_array( $_POST['iwiesp'] ) ? wp_unslash( $_POST['iwiesp'] ) : array();
 		$clean = Settings::sanitize( (array) $input );
 		Settings::save( $clean['settings'] );
 
@@ -101,7 +101,7 @@ final class Actions {
 	 */
 	public function export_csv() {
 		$this->require_cap();
-		check_admin_referer( 'iwiesm_export_csv' );
+		check_admin_referer( 'iwiesp_export_csv' );
 
 		nocache_headers();
 		header( 'Content-Type: text/csv; charset=utf-8' );
@@ -127,7 +127,7 @@ final class Actions {
 	 */
 	public function clear_history() {
 		$this->require_cap();
-		check_admin_referer( 'iwiesm_clear_history' );
+		check_admin_referer( 'iwiesp_clear_history' );
 		Results::delete_all();
 		self::flash( 'success', __( 'Test history deleted.', 'iworksie-speed-monitor' ) );
 		wp_safe_redirect( Plugin::page_url( 'history' ) );
@@ -140,7 +140,7 @@ final class Actions {
 	 * @return void
 	 */
 	public function run_test() {
-		check_ajax_referer( 'iwiesm_test', 'nonce' );
+		check_ajax_referer( 'iwiesp_test', 'nonce' );
 		if ( ! current_user_can( Plugin::CAPABILITY ) ) {
 			wp_send_json_error( array( 'message' => __( 'Sorry, you are not allowed to do that.', 'iworksie-speed-monitor' ) ), 403 );
 		}

@@ -45,7 +45,7 @@ final class MenuScreenUninstallTest extends IntegrationTestCase {
 	public function test_overview_empty_state() {
 		$html = $this->render_tab( 'overview' );
 		$this->assertStringContainsString( 'Run your first speed test', $html );
-		$this->assertStringContainsString( 'data-iwiesm-run', $html );
+		$this->assertStringContainsString( 'data-iwiesp-run', $html );
 		$this->assertStringContainsString( 'Only the page address is sent to Google', $html );
 	}
 
@@ -67,7 +67,7 @@ final class MenuScreenUninstallTest extends IntegrationTestCase {
 		$this->assertStringContainsString( 'Down 18 since the previous test', $html );
 		$this->assertStringContainsString( 'Not enough real-visitor data yet', $html );
 		$this->assertStringContainsString( 'Files are holding up the first paint', $html );
-		$this->assertStringContainsString( 'iwiesm-spark', $html );
+		$this->assertStringContainsString( 'iwiesp-spark', $html );
 		$this->assertStringContainsString( 'iWorks can fix them for you', $html );
 	}
 
@@ -83,11 +83,11 @@ final class MenuScreenUninstallTest extends IntegrationTestCase {
 		$html = $this->render_tab( 'history' );
 		$this->assertStringContainsString( 'Failed', $html );
 		$this->assertStringContainsString( '&lt;b&gt;the page&lt;/b&gt;', $html );
-		$this->assertStringContainsString( 'iwiesm_export_csv', $html );
+		$this->assertStringContainsString( 'iwiesp_export_csv', $html );
 
 		Settings::save_api_key( 'AIzaSyD-abcdefghijklmnopqrstuvwxyz_0123' );
 		$html = $this->render_tab( 'settings' );
-		$this->assertStringContainsString( 'name="iwiesm[urls]"', $html );
+		$this->assertStringContainsString( 'name="iwiesp[urls]"', $html );
 		$this->assertStringNotContainsString( 'abcdefghijklmnopqrstuvwxyz', $html, 'Saved key must never be printed' );
 		$this->assertStringContainsString( '••••••••0123', $html );
 	}
@@ -95,9 +95,9 @@ final class MenuScreenUninstallTest extends IntegrationTestCase {
 	public function test_uninstall_removes_everything() {
 		Settings::save( Settings::defaults() );
 		Settings::save_api_key( 'AIzaSyD-abcdefghijklmnopqrstuvwxyz_0123' );
-		update_option( 'iwiesm_queue', array( 'items' => array( 1 ) ), false );
-		set_transient( 'iwiesm_notice_1', array( 'message' => 'x' ), 60 );
-		wp_schedule_event( time() + 100, 'daily', 'iwiesm_scheduled_run' );
+		update_option( 'iwiesp_queue', array( 'items' => array( 1 ) ), false );
+		set_transient( 'iwiesp_notice_1', array( 'message' => 'x' ), 60 );
+		wp_schedule_event( time() + 100, 'daily', 'iwiesp_scheduled_run' );
 		Results::insert(
 			array(
 				'url'      => home_url( '/' ),
@@ -114,10 +114,10 @@ final class MenuScreenUninstallTest extends IntegrationTestCase {
 		global $wpdb;
 		$this->assertFalse( get_option( Settings::OPTION ) );
 		$this->assertFalse( get_option( Settings::KEY_OPTION ) );
-		$this->assertFalse( get_option( 'iwiesm_queue' ) );
-		$this->assertFalse( get_option( 'iwiesm_db_version' ) );
-		$this->assertFalse( get_transient( 'iwiesm_notice_1' ) );
-		$this->assertFalse( wp_next_scheduled( 'iwiesm_scheduled_run' ) );
+		$this->assertFalse( get_option( 'iwiesp_queue' ) );
+		$this->assertFalse( get_option( 'iwiesp_db_version' ) );
+		$this->assertFalse( get_transient( 'iwiesp_notice_1' ) );
+		$this->assertFalse( wp_next_scheduled( 'iwiesp_scheduled_run' ) );
 		$wpdb->suppress_errors( true );
 		$exists = $wpdb->get_results( 'DESCRIBE ' . Results::table() );
 		$wpdb->suppress_errors( false );

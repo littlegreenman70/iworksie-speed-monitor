@@ -27,8 +27,8 @@
 		<properties>
 			<property name="prefixes" type="array">
 				<element value="IWorksIE"/>
-				<element value="iwiesm"/>
-				<element value="IWIESM"/>
+				<element value="iwiesp"/>
+				<element value="IWIESP"/>
 				<element value="iworks_tools"/>
 			</property>
 		</properties>

@@ -11,7 +11,7 @@ use IWorksIE\SpeedMonitor\Settings;
 use WP_Ajax_UnitTestCase;
 
 /**
- * Auth and validation for wp_ajax_iwiesm_run_test.
+ * Auth and validation for wp_ajax_iwiesp_run_test.
  *
  * @group ajax
  */
@@ -62,7 +62,7 @@ final class AjaxTest extends WP_Ajax_UnitTestCase {
 	 */
 	private function call() {
 		try {
-			$this->_handleAjax( 'iwiesm_run_test' );
+			$this->_handleAjax( 'iwiesp_run_test' );
 		} catch ( \WPAjaxDieContinueException $e ) {
 			unset( $e );
 		}
@@ -75,12 +75,12 @@ final class AjaxTest extends WP_Ajax_UnitTestCase {
 		$_POST['url']      = home_url( '/' );
 		$_POST['strategy'] = 'mobile';
 		$this->expectException( \WPAjaxDieStopException::class );
-		$this->_handleAjax( 'iwiesm_run_test' );
+		$this->_handleAjax( 'iwiesp_run_test' );
 	}
 
 	public function test_subscriber_rejected() {
 		$this->_setRole( 'subscriber' );
-		$_POST['nonce']    = wp_create_nonce( 'iwiesm_test' );
+		$_POST['nonce']    = wp_create_nonce( 'iwiesp_test' );
 		$_POST['url']      = home_url( '/' );
 		$_POST['strategy'] = 'mobile';
 		$response          = $this->call();
@@ -89,7 +89,7 @@ final class AjaxTest extends WP_Ajax_UnitTestCase {
 
 	public function test_url_not_in_settings_rejected() {
 		$this->_setRole( 'administrator' );
-		$_POST['nonce']    = wp_create_nonce( 'iwiesm_test' );
+		$_POST['nonce']    = wp_create_nonce( 'iwiesp_test' );
 		$_POST['url']      = 'https://someone-else.test/';
 		$_POST['strategy'] = 'mobile';
 		$response          = $this->call();
@@ -99,7 +99,7 @@ final class AjaxTest extends WP_Ajax_UnitTestCase {
 
 	public function test_admin_runs_test() {
 		$this->_setRole( 'administrator' );
-		$_POST['nonce']    = wp_create_nonce( 'iwiesm_test' );
+		$_POST['nonce']    = wp_create_nonce( 'iwiesp_test' );
 		$_POST['url']      = home_url( '/' );
 		$_POST['strategy'] = 'mobile';
 		$response          = $this->call();

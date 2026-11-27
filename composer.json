@@ -52,7 +52,7 @@
 			"target_directory": "vendor-prefixed",
 			"namespace_prefix": "IWorksIE\\SpeedMonitor\\Vendor\\",
 			"classmap_prefix": "IWorksIE_SpeedMonitor_",
-			"constant_prefix": "IWIESM_",
+			"constant_prefix": "IWIESP_",
 			"packages": [
 				"iworksie/tools-core"
 			],
@@ -72,10 +72,10 @@
 		],
 		"lint": "phpcs",
 		"analyse": "phpstan analyse --memory-limit=1G",
-		"test:unit": "IWIESM_TESTSUITE=unit phpunit --testsuite unit",
+		"test:unit": "IWIESP_TESTSUITE=unit phpunit --testsuite unit",
 		"test:integration": [
-			"IWIESM_TESTSUITE=integration phpunit --testsuite integration",
-			"IWIESM_TESTSUITE=integration phpunit --testsuite integration --group ajax"
+			"IWIESP_TESTSUITE=integration phpunit --testsuite integration",
+			"IWIESP_TESTSUITE=integration phpunit --testsuite integration --group ajax"
 		],
 		"test": [
 			"@test:unit",

@@ -142,11 +142,11 @@ final class Screens {
 	 */
 	private static function score_ring( $score, $size = 'normal' ) {
 		if ( null === $score ) {
-			return '<div class="iwiesm-score iwiesm-score--none iwiesm-score--' . esc_attr( $size ) . '"><span class="iwiesm-score__value">—</span></div>';
+			return '<div class="iwiesp-score iwiesp-score--none iwiesp-score--' . esc_attr( $size ) . '"><span class="iwiesp-score__value">—</span></div>';
 		}
 		$band = Metrics::score_band( (int) $score );
-		return '<div class="iwiesm-score iwiesm-score--' . esc_attr( $band ) . ' iwiesm-score--' . esc_attr( $size ) . '" style="--iwiesm-score:' . esc_attr( (string) (int) $score ) . '">'
-			. '<span class="iwiesm-score__value">' . esc_html( (string) (int) $score ) . '</span>'
+		return '<div class="iwiesp-score iwiesp-score--' . esc_attr( $band ) . ' iwiesp-score--' . esc_attr( $size ) . '" style="--iwiesp-score:' . esc_attr( (string) (int) $score ) . '">'
+			. '<span class="iwiesp-score__value">' . esc_html( (string) (int) $score ) . '</span>'
 			. '<span class="screen-reader-text">' . esc_html__( 'out of 100', 'iworksie-speed-monitor' ) . '</span></div>';
 	}
 
@@ -163,7 +163,7 @@ final class Screens {
 		$disclosure = __( 'Tests run on Google\'s servers using PageSpeed Insights. Only the page address is sent to Google; nothing else leaves your site.', 'iworksie-speed-monitor' );
 
 		if ( ! $has_key ) {
-			echo '<div class="notice notice-info inline iwiesm-key-notice"><p>';
+			echo '<div class="notice notice-info inline iwiesp-key-notice"><p>';
 			echo esc_html__( 'Tip: add your own free Google API key for reliable testing. Without one, Google often limits requests from shared hosting.', 'iworksie-speed-monitor' ) . ' ';
 			echo '<a href="' . esc_url( Plugin::page_url( 'settings' ) ) . '">' . esc_html__( 'Add API key', 'iworksie-speed-monitor' ) . '</a>';
 			echo '</p></div>';
@@ -181,26 +181,26 @@ final class Screens {
 				)
 			) . '</p>';
 			echo '<p class="iwt-empty__body">' . esc_html( $disclosure ) . '</p>';
-			echo '<p class="iwt-empty__action"><button type="button" class="button button-primary button-hero" data-iwiesm-run>' . esc_html__( 'Test now', 'iworksie-speed-monitor' ) . '</button></p>';
+			echo '<p class="iwt-empty__action"><button type="button" class="button button-primary button-hero" data-iwiesp-run>' . esc_html__( 'Test now', 'iworksie-speed-monitor' ) . '</button></p>';
 			echo '</div>';
-			echo UI::progress( 'iwiesm-progress' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- UI::progress escapes.
-			echo '<div class="iwiesm-errors" data-iwiesm-errors aria-live="polite"></div>';
+			echo UI::progress( 'iwiesp-progress' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- UI::progress escapes.
+			echo '<div class="iwiesp-errors" data-iwiesp-errors aria-live="polite"></div>';
 			return;
 		}
 
-		echo '<div class="iwt-toolbar iwiesm-toolbar">';
-		echo '<button type="button" class="button button-primary" data-iwiesm-run>' . esc_html__( 'Test now', 'iworksie-speed-monitor' ) . '</button>';
-		echo '<p class="iwiesm-schedule">' . esc_html( $this->schedule_text( $settings ) ) . ' ';
+		echo '<div class="iwt-toolbar iwiesp-toolbar">';
+		echo '<button type="button" class="button button-primary" data-iwiesp-run>' . esc_html__( 'Test now', 'iworksie-speed-monitor' ) . '</button>';
+		echo '<p class="iwiesp-schedule">' . esc_html( $this->schedule_text( $settings ) ) . ' ';
 		echo '<a href="' . esc_url( Plugin::page_url( 'settings' ) ) . '">' . esc_html__( 'Change', 'iworksie-speed-monitor' ) . '</a></p>';
 		echo '</div>';
-		echo UI::progress( 'iwiesm-progress' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- UI::progress escapes.
-		echo '<div class="iwiesm-errors" data-iwiesm-errors aria-live="polite"></div>';
+		echo UI::progress( 'iwiesp-progress' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- UI::progress escapes.
+		echo '<div class="iwiesp-errors" data-iwiesp-errors aria-live="polite"></div>';
 
 		foreach ( (array) $settings['urls'] as $url ) {
 			$this->render_page_section( (string) $url, (array) $settings['strategies'] );
 		}
 
-		echo '<p class="iwiesm-disclosure">' . esc_html( $disclosure ) . '</p>';
+		echo '<p class="iwiesp-disclosure">' . esc_html( $disclosure ) . '</p>';
 	}
 
 	/**
@@ -246,13 +246,13 @@ final class Screens {
 			$latest[ $strategy ] = Results::latest( $url, $strategy );
 		}
 
-		echo '<section class="iwiesm-page">';
-		echo '<header class="iwiesm-page__header">';
-		echo '<h2 class="iwiesm-page__title">' . esc_html( Urls::label( $url ) ) . '</h2>';
-		echo '<a class="iwiesm-page__url" href="' . esc_url( $url ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $url ) . '<span class="screen-reader-text"> ' . esc_html__( '(opens in a new tab)', 'iworksie-speed-monitor' ) . '</span></a>';
+		echo '<section class="iwiesp-page">';
+		echo '<header class="iwiesp-page__header">';
+		echo '<h2 class="iwiesp-page__title">' . esc_html( Urls::label( $url ) ) . '</h2>';
+		echo '<a class="iwiesp-page__url" href="' . esc_url( $url ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $url ) . '<span class="screen-reader-text"> ' . esc_html__( '(opens in a new tab)', 'iworksie-speed-monitor' ) . '</span></a>';
 		echo '</header>';
 
-		echo '<div class="iwiesm-devices">';
+		echo '<div class="iwiesp-devices">';
 		foreach ( $strategies as $strategy ) {
 			$this->render_device( $url, $strategy, $latest[ $strategy ] );
 		}
@@ -268,8 +268,8 @@ final class Screens {
 		}
 		$code_fix = false;
 		if ( null !== $source ) {
-			echo '<div class="iwiesm-fixes">';
-			echo '<h3 class="iwiesm-fixes__title">' . esc_html(
+			echo '<div class="iwiesp-fixes">';
+			echo '<h3 class="iwiesp-fixes__title">' . esc_html(
 				sprintf(
 					/* translators: %s: device name */
 					__( 'Top fixes (from the %s test)', 'iworksie-speed-monitor' ),
@@ -296,7 +296,7 @@ final class Screens {
 			}
 			if ( $code_fix ) {
 				$cta = 'https://www.iworks.ie/?utm_source=wp-plugin&utm_medium=iworksie-speed-monitor&utm_campaign=fixes';
-				echo '<p class="iwiesm-cta">' . esc_html__( 'Some of these usually need changes to the theme or plugins.', 'iworksie-speed-monitor' ) . ' ';
+				echo '<p class="iwiesp-cta">' . esc_html__( 'Some of these usually need changes to the theme or plugins.', 'iworksie-speed-monitor' ) . ' ';
 				echo '<a href="' . esc_url( $cta ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'iWorks can fix them for you →', 'iworksie-speed-monitor' ) . '</a></p>';
 			}
 			echo '</div>';
@@ -349,8 +349,8 @@ final class Screens {
 	private function render_device( $url, $strategy, $row ) {
 		$last = Results::last_attempt( $url, $strategy );
 
-		echo '<div class="iwiesm-device">';
-		echo '<h3 class="iwiesm-device__title"><span class="dashicons ' . esc_attr( 'desktop' === $strategy ? 'dashicons-desktop' : 'dashicons-smartphone' ) . '" aria-hidden="true"></span> ' . esc_html( self::device_label( $strategy ) ) . '</h3>';
+		echo '<div class="iwiesp-device">';
+		echo '<h3 class="iwiesp-device__title"><span class="dashicons ' . esc_attr( 'desktop' === $strategy ? 'dashicons-desktop' : 'dashicons-smartphone' ) . '" aria-hidden="true"></span> ' . esc_html( self::device_label( $strategy ) ) . '</h3>';
 
 		if ( null !== $last && 'error' === $last['status'] && ( null === $row || (int) $last['id'] > (int) $row['id'] ) ) {
 			echo '<div class="notice notice-warning inline"><p>' . esc_html(
@@ -364,7 +364,7 @@ final class Screens {
 		}
 
 		if ( null === $row ) {
-			echo '<p class="iwiesm-muted">' . esc_html__( 'Not tested yet.', 'iworksie-speed-monitor' ) . '</p>';
+			echo '<p class="iwiesp-muted">' . esc_html__( 'Not tested yet.', 'iworksie-speed-monitor' ) . '</p>';
 			echo '</div>';
 			return;
 		}
@@ -376,10 +376,10 @@ final class Screens {
 		}
 		$previous = Results::latest( $url, $strategy, (int) $row['id'] );
 
-		echo '<div class="iwiesm-device__top">';
+		echo '<div class="iwiesp-device__top">';
 		echo self::score_ring( $row['score'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in score_ring().
-		echo '<div class="iwiesm-device__meta">';
-		echo '<p class="iwiesm-device__label">' . esc_html__( 'Performance score (lab)', 'iworksie-speed-monitor' ) . '</p>';
+		echo '<div class="iwiesp-device__meta">';
+		echo '<p class="iwiesp-device__label">' . esc_html__( 'Performance score (lab)', 'iworksie-speed-monitor' ) . '</p>';
 		if ( null !== $previous && null !== $previous['score'] && null !== $row['score'] ) {
 			$diff = (int) $row['score'] - (int) $previous['score'];
 			if ( 0 === $diff ) {
@@ -394,9 +394,9 @@ final class Screens {
 				$change = sprintf( __( 'Down %d since the previous test', 'iworksie-speed-monitor' ), abs( $diff ) );
 				$class  = 'down';
 			}
-			echo '<p class="iwiesm-change iwiesm-change--' . esc_attr( $class ) . '">' . esc_html( $change ) . '</p>';
+			echo '<p class="iwiesp-change iwiesp-change--' . esc_attr( $class ) . '">' . esc_html( $change ) . '</p>';
 		}
-		echo '<p class="iwiesm-muted" title="' . esc_attr( self::local_time( (string) $row['tested_at'] ) ) . '">' . esc_html(
+		echo '<p class="iwiesp-muted" title="' . esc_attr( self::local_time( (string) $row['tested_at'] ) ) . '">' . esc_html(
 			sprintf(
 				/* translators: %s: time ago */
 				__( 'Tested %s', 'iworksie-speed-monitor' ),
@@ -421,10 +421,10 @@ final class Screens {
 
 		// Real visitors.
 		$who = 'desktop' === $strategy ? __( 'desktop visitors', 'iworksie-speed-monitor' ) : __( 'phone visitors', 'iworksie-speed-monitor' );
-		echo '<div class="iwiesm-block iwiesm-block--field">';
-		echo '<h4 class="iwiesm-block__title">' . esc_html__( 'Real visitors', 'iworksie-speed-monitor' ) . ' <span class="iwiesm-tag iwiesm-tag--field">' . esc_html__( 'Field data', 'iworksie-speed-monitor' ) . '</span></h4>';
+		echo '<div class="iwiesp-block iwiesp-block--field">';
+		echo '<h4 class="iwiesp-block__title">' . esc_html__( 'Real visitors', 'iworksie-speed-monitor' ) . ' <span class="iwiesp-tag iwiesp-tag--field">' . esc_html__( 'Field data', 'iworksie-speed-monitor' ) . '</span></h4>';
 		if ( '' === (string) $row['field_scope'] ) {
-			echo '<p class="iwiesm-muted">' . esc_html(
+			echo '<p class="iwiesp-muted">' . esc_html(
 				sprintf(
 					/* translators: %s: "phone visitors" or "desktop visitors" */
 					__( 'Not enough real-visitor data yet. Google only reports this when enough Chrome users (%s) visit the site; until then, use the lab test below.', 'iworksie-speed-monitor' ),
@@ -437,7 +437,7 @@ final class Screens {
 				? sprintf( __( 'This page, %s, last 28 days (Chrome UX Report, 75th percentile).', 'iworksie-speed-monitor' ), $who )
 				/* translators: %s: "phone visitors" or "desktop visitors" */
 				: sprintf( __( 'Whole site (not enough data for this page alone), %s, last 28 days (Chrome UX Report, 75th percentile).', 'iworksie-speed-monitor' ), $who );
-			echo '<p class="iwiesm-muted iwiesm-block__scope">' . esc_html( $scope ) . '</p>';
+			echo '<p class="iwiesp-muted iwiesp-block__scope">' . esc_html( $scope ) . '</p>';
 			$this->metric_list(
 				array(
 					'lcp'  => $row['field_lcp'],
@@ -450,9 +450,9 @@ final class Screens {
 		echo '</div>';
 
 		// Lab.
-		echo '<div class="iwiesm-block iwiesm-block--lab">';
-		echo '<h4 class="iwiesm-block__title">' . esc_html__( 'Lab test', 'iworksie-speed-monitor' ) . ' <span class="iwiesm-tag iwiesm-tag--lab">' . esc_html__( 'Simulated', 'iworksie-speed-monitor' ) . '</span></h4>';
-		echo '<p class="iwiesm-muted iwiesm-block__scope">' . esc_html(
+		echo '<div class="iwiesp-block iwiesp-block--lab">';
+		echo '<h4 class="iwiesp-block__title">' . esc_html__( 'Lab test', 'iworksie-speed-monitor' ) . ' <span class="iwiesp-tag iwiesp-tag--lab">' . esc_html__( 'Simulated', 'iworksie-speed-monitor' ) . '</span></h4>';
+		echo '<p class="iwiesp-muted iwiesp-block__scope">' . esc_html(
 			'desktop' === $strategy
 				? __( 'One simulated visit on a desktop connection, from this test. Useful for spotting changes; can vary a few points between runs.', 'iworksie-speed-monitor' )
 				: __( 'One simulated visit on a mid-range phone with a slow mobile connection, from this test. Useful for spotting changes; can vary a few points between runs.', 'iworksie-speed-monitor' )
@@ -480,14 +480,14 @@ final class Screens {
 	private function metric_list( array $values ) {
 		$names = Metrics::names();
 		$help  = Metrics::explanations();
-		echo '<dl class="iwiesm-metrics">';
+		echo '<dl class="iwiesp-metrics">';
 		foreach ( $values as $metric => $value ) {
 			if ( null === $value ) {
 				continue;
 			}
-			echo '<div class="iwiesm-metric">';
+			echo '<div class="iwiesp-metric">';
 			echo '<dt title="' . esc_attr( $help[ $metric ] ) . '">' . esc_html( $names[ $metric ] ) . '</dt>';
-			echo '<dd><span class="iwiesm-metric__value">' . esc_html( Metrics::format( $metric, $value ) ) . '</span> ';
+			echo '<dd><span class="iwiesp-metric__value">' . esc_html( Metrics::format( $metric, $value ) ) . '</span> ';
 			echo self::rating_badge( Metrics::rate( $metric, $value ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in rating_badge().
 			echo '</dd></div>';
 		}
@@ -502,8 +502,8 @@ final class Screens {
 	private function render_history() {
 		$settings = Settings::get();
 		// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Read-only filters.
-		$filter_url = isset( $_GET['iwiesm_url'] ) ? esc_url_raw( wp_unslash( (string) $_GET['iwiesm_url'] ) ) : '';
-		$filter_dev = isset( $_GET['iwiesm_device'] ) ? sanitize_key( wp_unslash( (string) $_GET['iwiesm_device'] ) ) : '';
+		$filter_url = isset( $_GET['iwiesp_url'] ) ? esc_url_raw( wp_unslash( (string) $_GET['iwiesp_url'] ) ) : '';
+		$filter_dev = isset( $_GET['iwiesp_device'] ) ? sanitize_key( wp_unslash( (string) $_GET['iwiesp_device'] ) ) : '';
 		$paged      = isset( $_GET['paged'] ) ? max( 1, absint( $_GET['paged'] ) ) : 1;
 		// phpcs:enable
 		if ( ! in_array( $filter_dev, array( 'mobile', 'desktop' ), true ) ) {
@@ -513,17 +513,17 @@ final class Screens {
 		$data  = Results::history( $filter_url, $filter_dev, self::PER_PAGE, $paged );
 		$total = Results::count();
 
-		echo '<form method="get" class="iwiesm-filters">';
+		echo '<form method="get" class="iwiesp-filters">';
 		echo '<input type="hidden" name="page" value="' . esc_attr( Plugin::SLUG ) . '" />';
 		echo '<input type="hidden" name="tab" value="history" />';
-		echo '<label for="iwiesm-filter-url">' . esc_html__( 'Page', 'iworksie-speed-monitor' ) . '</label> ';
-		echo '<select id="iwiesm-filter-url" name="iwiesm_url"><option value="">' . esc_html__( 'All pages', 'iworksie-speed-monitor' ) . '</option>';
+		echo '<label for="iwiesp-filter-url">' . esc_html__( 'Page', 'iworksie-speed-monitor' ) . '</label> ';
+		echo '<select id="iwiesp-filter-url" name="iwiesp_url"><option value="">' . esc_html__( 'All pages', 'iworksie-speed-monitor' ) . '</option>';
 		foreach ( (array) $settings['urls'] as $url ) {
 			echo '<option value="' . esc_attr( (string) $url ) . '"' . selected( $filter_url, $url, false ) . '>' . esc_html( Urls::label( (string) $url ) ) . '</option>';
 		}
 		echo '</select> ';
-		echo '<label for="iwiesm-filter-device">' . esc_html__( 'Device', 'iworksie-speed-monitor' ) . '</label> ';
-		echo '<select id="iwiesm-filter-device" name="iwiesm_device">';
+		echo '<label for="iwiesp-filter-device">' . esc_html__( 'Device', 'iworksie-speed-monitor' ) . '</label> ';
+		echo '<select id="iwiesp-filter-device" name="iwiesp_device">';
 		echo '<option value="">' . esc_html__( 'All devices', 'iworksie-speed-monitor' ) . '</option>';
 		echo '<option value="mobile"' . selected( $filter_dev, 'mobile', false ) . '>' . esc_html__( 'Mobile', 'iworksie-speed-monitor' ) . '</option>';
 		echo '<option value="desktop"' . selected( $filter_dev, 'desktop', false ) . '>' . esc_html__( 'Desktop', 'iworksie-speed-monitor' ) . '</option>';
@@ -531,7 +531,7 @@ final class Screens {
 		submit_button( __( 'Filter', 'iworksie-speed-monitor' ), 'secondary', '', false );
 		echo '</form>';
 
-		echo '<div class="iwiesm-table-wrap"><table class="widefat striped iwiesm-history">';
+		echo '<div class="iwiesp-table-wrap"><table class="widefat striped iwiesp-history">';
 		echo '<thead><tr>';
 		$columns = array(
 			__( 'Tested', 'iworksie-speed-monitor' ),
@@ -560,10 +560,10 @@ final class Screens {
 			echo '<td><span title="' . esc_attr( (string) $row['url'] ) . '">' . esc_html( Urls::label( (string) $row['url'] ) ) . '</span></td>';
 			echo '<td>' . esc_html( self::device_label( (string) $row['strategy'] ) ) . '</td>';
 			if ( 'ok' !== $row['status'] ) {
-				echo '<td colspan="7" class="iwiesm-history__error"><span class="iwt-badge iwt-badge--critical">' . esc_html__( 'Failed', 'iworksie-speed-monitor' ) . '</span> ' . esc_html( (string) $row['error_message'] ) . '</td>';
+				echo '<td colspan="7" class="iwiesp-history__error"><span class="iwt-badge iwt-badge--critical">' . esc_html__( 'Failed', 'iworksie-speed-monitor' ) . '</span> ' . esc_html( (string) $row['error_message'] ) . '</td>';
 			} else {
 				$band = Metrics::score_band( $row['score'] );
-				echo '<td><span class="iwiesm-score-pill iwiesm-score-pill--' . esc_attr( $band ) . '">' . esc_html( null === $row['score'] ? '—' : (string) $row['score'] ) . '</span></td>';
+				echo '<td><span class="iwiesp-score-pill iwiesp-score-pill--' . esc_attr( $band ) . '">' . esc_html( null === $row['score'] ? '—' : (string) $row['score'] ) . '</span></td>';
 				foreach ( array(
 					'lab_lcp'   => 'lcp',
 					'lab_tbt'   => 'tbt',
@@ -574,7 +574,7 @@ final class Screens {
 				) as $column => $metric ) {
 					$value  = $row[ $column ];
 					$rating = Metrics::rate( $metric, $value );
-					echo '<td class="iwiesm-cell' . ( '' !== $rating ? ' iwiesm-cell--' . esc_attr( $rating ) : '' ) . '">' . esc_html( Metrics::format( $metric, $value ) ) . '</td>';
+					echo '<td class="iwiesp-cell' . ( '' !== $rating ? ' iwiesp-cell--' . esc_attr( $rating ) : '' ) . '">' . esc_html( Metrics::format( $metric, $value ) ) . '</td>';
 				}
 			}
 			echo '<td>' . esc_html( 'scheduled' === $row['source'] ? __( 'Schedule', 'iworksie-speed-monitor' ) : __( 'Manual', 'iworksie-speed-monitor' ) ) . '</td>';
@@ -599,20 +599,20 @@ final class Screens {
 			}
 		}
 
-		echo '<div class="iwiesm-history-actions">';
+		echo '<div class="iwiesp-history-actions">';
 		if ( $total > 0 ) {
 			echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">';
-			echo '<input type="hidden" name="action" value="iwiesm_export_csv" />';
-			wp_nonce_field( 'iwiesm_export_csv' );
+			echo '<input type="hidden" name="action" value="iwiesp_export_csv" />';
+			wp_nonce_field( 'iwiesp_export_csv' );
 			submit_button( __( 'Download CSV', 'iworksie-speed-monitor' ), 'secondary', 'submit', false );
 			echo '</form>';
-			echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" data-iwiesm-confirm>';
-			echo '<input type="hidden" name="action" value="iwiesm_clear_history" />';
-			wp_nonce_field( 'iwiesm_clear_history' );
+			echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" data-iwiesp-confirm>';
+			echo '<input type="hidden" name="action" value="iwiesp_clear_history" />';
+			wp_nonce_field( 'iwiesp_clear_history' );
 			submit_button( __( 'Delete all history', 'iworksie-speed-monitor' ), 'delete', 'submit', false );
 			echo '</form>';
 		}
-		echo '<p class="iwiesm-muted">' . esc_html(
+		echo '<p class="iwiesp-muted">' . esc_html(
 			sprintf(
 				/* translators: 1: number of stored tests, 2: number of days kept */
 				_n( '%1$d test stored. Tests older than %2$d days are removed automatically.', '%1$d tests stored. Tests older than %2$d days are removed automatically.', $total, 'iworksie-speed-monitor' ),
@@ -633,16 +633,16 @@ final class Screens {
 		$key        = Settings::api_key();
 		$from_const = Settings::api_key_from_constant();
 
-		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" class="iwiesm-settings">';
-		echo '<input type="hidden" name="action" value="iwiesm_save_settings" />';
-		wp_nonce_field( 'iwiesm_save_settings' );
+		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" class="iwiesp-settings">';
+		echo '<input type="hidden" name="action" value="iwiesp_save_settings" />';
+		wp_nonce_field( 'iwiesp_save_settings' );
 
 		echo '<h2>' . esc_html__( 'Pages to monitor', 'iworksie-speed-monitor' ) . '</h2>';
 		echo '<table class="form-table" role="presentation"><tbody>';
 
-		echo '<tr><th scope="row"><label for="iwiesm-urls">' . esc_html__( 'Pages', 'iworksie-speed-monitor' ) . '</label></th><td>';
-		echo '<textarea id="iwiesm-urls" name="iwiesm[urls]" rows="5" class="large-text code" aria-describedby="iwiesm-urls-help">' . esc_textarea( implode( "\n", (array) $s['urls'] ) ) . '</textarea>';
-		echo '<p class="description" id="iwiesm-urls-help">' . esc_html(
+		echo '<tr><th scope="row"><label for="iwiesp-urls">' . esc_html__( 'Pages', 'iworksie-speed-monitor' ) . '</label></th><td>';
+		echo '<textarea id="iwiesp-urls" name="iwiesp[urls]" rows="5" class="large-text code" aria-describedby="iwiesp-urls-help">' . esc_textarea( implode( "\n", (array) $s['urls'] ) ) . '</textarea>';
+		echo '<p class="description" id="iwiesp-urls-help">' . esc_html(
 			sprintf(
 				/* translators: %d: max number of pages */
 				__( 'One address per line, up to %d. Only pages on this site. You can also write a path such as /contact/. Pick your most important pages: home, a popular post, a product or contact page.', 'iworksie-speed-monitor' ),
@@ -653,7 +653,7 @@ final class Screens {
 
 		echo '<tr><th scope="row">' . esc_html__( 'Devices', 'iworksie-speed-monitor' ) . '</th><td><fieldset><legend class="screen-reader-text">' . esc_html__( 'Devices', 'iworksie-speed-monitor' ) . '</legend>';
 		foreach ( array( 'mobile', 'desktop' ) as $strategy ) {
-			echo '<label><input type="checkbox" name="iwiesm[strategies][]" value="' . esc_attr( $strategy ) . '"' . checked( in_array( $strategy, (array) $s['strategies'], true ), true, false ) . ' /> ' . esc_html( self::device_label( $strategy ) ) . '</label><br />';
+			echo '<label><input type="checkbox" name="iwiesp[strategies][]" value="' . esc_attr( $strategy ) . '"' . checked( in_array( $strategy, (array) $s['strategies'], true ), true, false ) . ' /> ' . esc_html( self::device_label( $strategy ) ) . '</label><br />';
 		}
 		echo '<p class="description">' . esc_html__( 'Google ranks pages on their mobile speed, so keep Mobile on.', 'iworksie-speed-monitor' ) . '</p>';
 		echo '</fieldset></td></tr>';
@@ -662,34 +662,34 @@ final class Screens {
 		echo '<h2>' . esc_html__( 'Schedule', 'iworksie-speed-monitor' ) . '</h2>';
 		echo '<table class="form-table" role="presentation"><tbody>';
 		echo '<tr><th scope="row">' . esc_html__( 'Scheduled tests', 'iworksie-speed-monitor' ) . '</th><td>';
-		echo '<label><input type="checkbox" name="iwiesm[enabled]" value="1"' . checked( ! empty( $s['enabled'] ), true, false ) . ' /> ' . esc_html__( 'Test my pages automatically', 'iworksie-speed-monitor' ) . '</label>';
+		echo '<label><input type="checkbox" name="iwiesp[enabled]" value="1"' . checked( ! empty( $s['enabled'] ), true, false ) . ' /> ' . esc_html__( 'Test my pages automatically', 'iworksie-speed-monitor' ) . '</label>';
 		echo '<p class="description">' . esc_html__( 'Runs one test at a time in the background (one page every 30 seconds or so), starting around 3am site time. Uses WordPress cron, which needs some site traffic or a real server cron job to run on time.', 'iworksie-speed-monitor' ) . '</p>';
 		echo '</td></tr>';
-		echo '<tr><th scope="row"><label for="iwiesm-frequency">' . esc_html__( 'How often', 'iworksie-speed-monitor' ) . '</label></th><td>';
-		echo '<select id="iwiesm-frequency" name="iwiesm[frequency]">';
+		echo '<tr><th scope="row"><label for="iwiesp-frequency">' . esc_html__( 'How often', 'iworksie-speed-monitor' ) . '</label></th><td>';
+		echo '<select id="iwiesp-frequency" name="iwiesp[frequency]">';
 		echo '<option value="daily"' . selected( $s['frequency'], 'daily', false ) . '>' . esc_html__( 'Daily', 'iworksie-speed-monitor' ) . '</option>';
 		echo '<option value="weekly"' . selected( $s['frequency'], 'weekly', false ) . '>' . esc_html__( 'Weekly', 'iworksie-speed-monitor' ) . '</option>';
 		echo '</select></td></tr>';
-		echo '<tr><th scope="row"><label for="iwiesm-retention">' . esc_html__( 'Keep history for', 'iworksie-speed-monitor' ) . '</label></th><td>';
-		echo '<input type="number" id="iwiesm-retention" name="iwiesm[retention_days]" min="30" max="1095" step="1" class="small-text" value="' . esc_attr( (string) $s['retention_days'] ) . '" /> ' . esc_html__( 'days', 'iworksie-speed-monitor' );
+		echo '<tr><th scope="row"><label for="iwiesp-retention">' . esc_html__( 'Keep history for', 'iworksie-speed-monitor' ) . '</label></th><td>';
+		echo '<input type="number" id="iwiesp-retention" name="iwiesp[retention_days]" min="30" max="1095" step="1" class="small-text" value="' . esc_attr( (string) $s['retention_days'] ) . '" /> ' . esc_html__( 'days', 'iworksie-speed-monitor' );
 		echo '</td></tr>';
 		echo '</tbody></table>';
 
 		echo '<h2>' . esc_html__( 'Alerts', 'iworksie-speed-monitor' ) . '</h2>';
 		echo '<table class="form-table" role="presentation"><tbody>';
 		echo '<tr><th scope="row">' . esc_html__( 'Email alerts', 'iworksie-speed-monitor' ) . '</th><td>';
-		echo '<label><input type="checkbox" name="iwiesm[alerts_enabled]" value="1"' . checked( ! empty( $s['alerts_enabled'] ), true, false ) . ' /> ' . esc_html__( 'Email me when a scheduled test shows a speed drop', 'iworksie-speed-monitor' ) . '</label>';
+		echo '<label><input type="checkbox" name="iwiesp[alerts_enabled]" value="1"' . checked( ! empty( $s['alerts_enabled'] ), true, false ) . ' /> ' . esc_html__( 'Email me when a scheduled test shows a speed drop', 'iworksie-speed-monitor' ) . '</label>';
 		echo '<p class="description">' . esc_html__( 'One email per run at most, listing every page that dropped.', 'iworksie-speed-monitor' ) . '</p>';
 		echo '</td></tr>';
-		echo '<tr><th scope="row"><label for="iwiesm-email">' . esc_html__( 'Send alerts to', 'iworksie-speed-monitor' ) . '</label></th><td>';
-		echo '<input type="email" id="iwiesm-email" name="iwiesm[alert_email]" class="regular-text" value="' . esc_attr( (string) $s['alert_email'] ) . '" />';
+		echo '<tr><th scope="row"><label for="iwiesp-email">' . esc_html__( 'Send alerts to', 'iworksie-speed-monitor' ) . '</label></th><td>';
+		echo '<input type="email" id="iwiesp-email" name="iwiesp[alert_email]" class="regular-text" value="' . esc_attr( (string) $s['alert_email'] ) . '" />';
 		echo '</td></tr>';
-		echo '<tr><th scope="row"><label for="iwiesm-drop">' . esc_html__( 'Alert when the score drops by', 'iworksie-speed-monitor' ) . '</label></th><td>';
-		echo '<input type="number" id="iwiesm-drop" name="iwiesm[alert_drop]" min="1" max="100" class="small-text" value="' . esc_attr( (string) $s['alert_drop'] ) . '" /> ' . esc_html__( 'points or more since the previous test', 'iworksie-speed-monitor' );
+		echo '<tr><th scope="row"><label for="iwiesp-drop">' . esc_html__( 'Alert when the score drops by', 'iworksie-speed-monitor' ) . '</label></th><td>';
+		echo '<input type="number" id="iwiesp-drop" name="iwiesp[alert_drop]" min="1" max="100" class="small-text" value="' . esc_attr( (string) $s['alert_drop'] ) . '" /> ' . esc_html__( 'points or more since the previous test', 'iworksie-speed-monitor' );
 		echo '<p class="description">' . esc_html__( 'Lab scores naturally move a few points between runs, so 10 is a sensible minimum.', 'iworksie-speed-monitor' ) . '</p>';
 		echo '</td></tr>';
-		echo '<tr><th scope="row"><label for="iwiesm-below">' . esc_html__( 'Or falls below', 'iworksie-speed-monitor' ) . '</label></th><td>';
-		echo '<input type="number" id="iwiesm-below" name="iwiesm[alert_below]" min="0" max="100" class="small-text" value="' . esc_attr( (string) $s['alert_below'] ) . '" />';
+		echo '<tr><th scope="row"><label for="iwiesp-below">' . esc_html__( 'Or falls below', 'iworksie-speed-monitor' ) . '</label></th><td>';
+		echo '<input type="number" id="iwiesp-below" name="iwiesp[alert_below]" min="0" max="100" class="small-text" value="' . esc_attr( (string) $s['alert_below'] ) . '" />';
 		echo '<p class="description">' . esc_html__( 'You are told once when a page crosses below this score, not on every run. Set 0 to turn this off.', 'iworksie-speed-monitor' ) . '</p>';
 		echo '</td></tr>';
 		echo '</tbody></table>';
@@ -697,31 +697,31 @@ final class Screens {
 		echo '<h2>' . esc_html__( 'Google API key', 'iworksie-speed-monitor' ) . '</h2>';
 		echo '<p>' . esc_html__( 'Optional but recommended. Tests work without a key, but Google often limits keyless requests, especially from shared hosting. A key is free and allows thousands of tests a day.', 'iworksie-speed-monitor' ) . '</p>';
 		echo '<table class="form-table" role="presentation"><tbody>';
-		echo '<tr><th scope="row"><label for="iwiesm-key">' . esc_html__( 'API key', 'iworksie-speed-monitor' ) . '</label></th><td>';
+		echo '<tr><th scope="row"><label for="iwiesp-key">' . esc_html__( 'API key', 'iworksie-speed-monitor' ) . '</label></th><td>';
 		if ( $from_const ) {
 			echo '<p>' . esc_html(
 				sprintf(
 					/* translators: %s: masked key */
-					__( 'Set in wp-config.php (IWIESM_PSI_API_KEY): %s', 'iworksie-speed-monitor' ),
+					__( 'Set in wp-config.php (IWIESP_PSI_API_KEY): %s', 'iworksie-speed-monitor' ),
 					Settings::mask_key( $key )
 				)
 			) . '</p>';
 		} else {
-			echo '<input type="password" id="iwiesm-key" name="iwiesm[api_key]" class="regular-text code" autocomplete="off" spellcheck="false" value="" placeholder="' . esc_attr( '' !== $key ? Settings::mask_key( $key ) : '' ) . '" aria-describedby="iwiesm-key-help" />';
+			echo '<input type="password" id="iwiesp-key" name="iwiesp[api_key]" class="regular-text code" autocomplete="off" spellcheck="false" value="" placeholder="' . esc_attr( '' !== $key ? Settings::mask_key( $key ) : '' ) . '" aria-describedby="iwiesp-key-help" />';
 			if ( '' !== $key ) {
-				echo '<p><label><input type="checkbox" name="iwiesm[remove_api_key]" value="1" /> ' . esc_html__( 'Remove the saved key', 'iworksie-speed-monitor' ) . '</label></p>';
+				echo '<p><label><input type="checkbox" name="iwiesp[remove_api_key]" value="1" /> ' . esc_html__( 'Remove the saved key', 'iworksie-speed-monitor' ) . '</label></p>';
 			}
-			echo '<p class="description" id="iwiesm-key-help">';
+			echo '<p class="description" id="iwiesp-key-help">';
 			echo esc_html( '' !== $key ? __( 'A key is saved. Leave blank to keep it.', 'iworksie-speed-monitor' ) . ' ' : '' );
 			echo esc_html__( 'Get one in two minutes:', 'iworksie-speed-monitor' ) . ' ';
 			echo '<a href="https://developers.google.com/speed/docs/insights/v5/get-started" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Google\'s instructions', 'iworksie-speed-monitor' ) . '<span class="screen-reader-text"> ' . esc_html__( '(opens in a new tab)', 'iworksie-speed-monitor' ) . '</span></a>. ';
-			echo esc_html__( 'You can also define IWIESM_PSI_API_KEY in wp-config.php.', 'iworksie-speed-monitor' );
+			echo esc_html__( 'You can also define IWIESP_PSI_API_KEY in wp-config.php.', 'iworksie-speed-monitor' );
 			echo '</p>';
 		}
 		echo '</td></tr>';
 		echo '</tbody></table>';
 
-		echo '<p class="iwiesm-disclosure">' . esc_html__( 'Privacy: tests call Google PageSpeed Insights directly from your server. Only the page address (and your API key, if set) is sent to Google. No data goes to iWorks or anyone else.', 'iworksie-speed-monitor' ) . '</p>';
+		echo '<p class="iwiesp-disclosure">' . esc_html__( 'Privacy: tests call Google PageSpeed Insights directly from your server. Only the page address (and your API key, if set) is sent to Google. No data goes to iWorks or anyone else.', 'iworksie-speed-monitor' ) . '</p>';
 
 		submit_button( __( 'Save settings', 'iworksie-speed-monitor' ) );
 		echo '</form>';

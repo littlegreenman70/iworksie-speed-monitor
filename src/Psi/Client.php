@@ -53,7 +53,7 @@ final class Client {
 			self::request_url( $url, $strategy, $api_key, $locale ),
 			array(
 				'timeout'    => self::TIMEOUT,
-				'user-agent' => 'iWorksIE-Speed-Monitor/' . ( defined( 'IWIESM_VERSION' ) ? IWIESM_VERSION : '1' ) . '; WordPress',
+				'user-agent' => 'iWorksIE-Speed-Monitor/' . ( defined( 'IWIESP_VERSION' ) ? IWIESP_VERSION : '1' ) . '; WordPress',
 				'headers'    => array( 'Accept' => 'application/json' ),
 			)
 		);

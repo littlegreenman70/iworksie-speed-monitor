@@ -10,12 +10,12 @@ namespace IWorksIE\SpeedMonitor;
 use IWorksIE\SpeedMonitor\Support\Urls;
 
 /**
- * Settings stored in the iwiesm_settings option (API key stored separately).
+ * Settings stored in the iwiesp_settings option (API key stored separately).
  */
 final class Settings {
 
-	const OPTION     = 'iwiesm_settings';
-	const KEY_OPTION = 'iwiesm_api_key';
+	const OPTION     = 'iwiesp_settings';
+	const KEY_OPTION = 'iwiesp_api_key';
 	const MAX_URLS   = 10;
 
 	/**
@@ -132,8 +132,8 @@ final class Settings {
 	 * @return string
 	 */
 	public static function api_key() {
-		if ( defined( 'IWIESM_PSI_API_KEY' ) && is_string( constant( 'IWIESM_PSI_API_KEY' ) ) ) {
-			return trim( (string) constant( 'IWIESM_PSI_API_KEY' ) );
+		if ( defined( 'IWIESP_PSI_API_KEY' ) && is_string( constant( 'IWIESP_PSI_API_KEY' ) ) ) {
+			return trim( (string) constant( 'IWIESP_PSI_API_KEY' ) );
 		}
 		$key = get_option( self::KEY_OPTION, '' );
 		return is_string( $key ) ? trim( $key ) : '';
@@ -145,7 +145,7 @@ final class Settings {
 	 * @return bool
 	 */
 	public static function api_key_from_constant() {
-		return defined( 'IWIESM_PSI_API_KEY' ) && '' !== trim( (string) constant( 'IWIESM_PSI_API_KEY' ) );
+		return defined( 'IWIESP_PSI_API_KEY' ) && '' !== trim( (string) constant( 'IWIESP_PSI_API_KEY' ) );
 	}
 
 	/**

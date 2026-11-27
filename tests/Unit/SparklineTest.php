@@ -24,6 +24,6 @@ final class SparklineTest extends UnitTestCase {
 		$svg = Sparkline::svg( array( 40, 95 ), 'Trend' );
 		$this->assertStringContainsString( 'role="img"', $svg );
 		$this->assertStringContainsString( 'aria-label="Trend"', $svg );
-		$this->assertStringContainsString( 'iwiesm-spark--good', $svg );
+		$this->assertStringContainsString( 'iwiesp-spark--good', $svg );
 	}
 }

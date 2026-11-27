@@ -55,7 +55,7 @@ The plugin does not send any data to iWorks or any other party, and does not tra
 
 = Do I need a Google API key? =
 
-No, but it is recommended. Google limits tests without a key, and on shared hosting those limits are often already used up by other sites on the same server. A key is free and takes a couple of minutes to create: see [Google's instructions](https://developers.google.com/speed/docs/insights/v5/get-started). You can also define `IWIESM_PSI_API_KEY` in `wp-config.php`.
+No, but it is recommended. Google limits tests without a key, and on shared hosting those limits are often already used up by other sites on the same server. A key is free and takes a couple of minutes to create: see [Google's instructions](https://developers.google.com/speed/docs/insights/v5/get-started). You can also define `IWIESP_PSI_API_KEY` in `wp-config.php`.
 
 = Why are there two sets of numbers? =
 

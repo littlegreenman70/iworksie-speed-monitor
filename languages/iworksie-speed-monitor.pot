@@ -495,7 +495,7 @@ msgstr ""
 
 #. translators: %s: masked key
 #: src/Admin/Screens.php:705
-msgid "Set in wp-config.php (IWIESM_PSI_API_KEY): %s"
+msgid "Set in wp-config.php (IWIESP_PSI_API_KEY): %s"
 msgstr ""
 
 #: src/Admin/Screens.php:712
@@ -515,7 +515,7 @@ msgid "Google's instructions"
 msgstr ""
 
 #: src/Admin/Screens.php:718
-msgid "You can also define IWIESM_PSI_API_KEY in wp-config.php."
+msgid "You can also define IWIESP_PSI_API_KEY in wp-config.php."
 msgstr ""
 
 #: src/Admin/Screens.php:724

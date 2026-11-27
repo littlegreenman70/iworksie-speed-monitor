@@ -14,11 +14,11 @@ use IWorksIE\SpeedMonitor\Storage\Results;
  */
 final class Scheduler {
 
-	const RUN_HOOK     = 'iwiesm_scheduled_run';
-	const QUEUE_HOOK   = 'iwiesm_process_queue';
-	const QUEUE_OPTION = 'iwiesm_queue';
-	const LOCK_OPTION  = 'iwiesm_queue_lock';
-	const LAST_OPTION  = 'iwiesm_last_run';
+	const RUN_HOOK     = 'iwiesp_scheduled_run';
+	const QUEUE_HOOK   = 'iwiesp_process_queue';
+	const QUEUE_OPTION = 'iwiesp_queue';
+	const LOCK_OPTION  = 'iwiesp_queue_lock';
+	const LAST_OPTION  = 'iwiesp_last_run';
 	const GAP          = 30;
 	const RETRY_GAP    = 300;
 	const MAX_ATTEMPTS = 2;

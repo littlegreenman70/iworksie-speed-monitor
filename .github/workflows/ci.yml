@@ -112,7 +112,7 @@ jobs:
       - name: Integration tests
         env:
           WP_TESTS_DIR: ${{ github.workspace }}/tests/wordpress/wordpress-tests-lib
-          IWIESM_TESTSUITE: integration
+          IWIESP_TESTSUITE: integration
         run: composer test:integration
 
   plugin-check:
@@ -270,6 +270,6 @@ jobs:
           WP_TESTS_DIR: ${{ github.workspace }}/tests/wordpress/wordpress-tests-lib
         run: |
           php -v
-          IWIESM_TESTSUITE=unit vendor/bin/phpunit --testsuite unit
-          IWIESM_TESTSUITE=integration vendor/bin/phpunit --testsuite integration
-          IWIESM_TESTSUITE=integration vendor/bin/phpunit --testsuite integration --group ajax
+          IWIESP_TESTSUITE=unit vendor/bin/phpunit --testsuite unit
+          IWIESP_TESTSUITE=integration vendor/bin/phpunit --testsuite integration
+          IWIESP_TESTSUITE=integration vendor/bin/phpunit --testsuite integration --group ajax

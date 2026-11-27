@@ -84,7 +84,7 @@ final class Runner {
 		 *
 		 * @param array<string,mixed> $row Stored row.
 		 */
-		do_action( 'iwiesm_test_completed', $row );
+		do_action( 'iwiesp_test_completed', $row );
 
 		return $row;
 	}

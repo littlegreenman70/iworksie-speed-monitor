@@ -18,12 +18,12 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'IWIESM_VERSION', '1.0.0' );
-define( 'IWIESM_FILE', __FILE__ );
-define( 'IWIESM_PATH', plugin_dir_path( __FILE__ ) );
-define( 'IWIESM_URL', plugin_dir_url( __FILE__ ) );
-define( 'IWIESM_MIN_PHP', '7.4' );
-define( 'IWIESM_MIN_WP', '6.5' );
+define( 'IWIESP_VERSION', '1.0.0' );
+define( 'IWIESP_FILE', __FILE__ );
+define( 'IWIESP_PATH', plugin_dir_path( __FILE__ ) );
+define( 'IWIESP_URL', plugin_dir_url( __FILE__ ) );
+define( 'IWIESP_MIN_PHP', '7.4' );
+define( 'IWIESP_MIN_WP', '6.5' );
 
 /**
  * Admin notice when requirements are not met.
@@ -31,7 +31,7 @@ define( 'IWIESM_MIN_WP', '6.5' );
  * @param string $message Notice text.
  * @return void
  */
-function iwiesm_requirements_notice( $message ) {
+function iwiesp_requirements_notice( $message ) {
 	add_action(
 		'admin_notices',
 		static function () use ( $message ) {
@@ -40,12 +40,12 @@ function iwiesm_requirements_notice( $message ) {
 	);
 }
 
-if ( version_compare( PHP_VERSION, IWIESM_MIN_PHP, '<' ) ) {
-	iwiesm_requirements_notice(
+if ( version_compare( PHP_VERSION, IWIESP_MIN_PHP, '<' ) ) {
+	iwiesp_requirements_notice(
 		sprintf(
 			/* translators: 1: required PHP version, 2: current PHP version */
 			__( 'iWorks.ie Speed Monitor requires PHP %1$s or higher. This site is running PHP %2$s.', 'iworksie-speed-monitor' ),
-			IWIESM_MIN_PHP,
+			IWIESP_MIN_PHP,
 			PHP_VERSION
 		)
 	);
@@ -53,30 +53,30 @@ if ( version_compare( PHP_VERSION, IWIESM_MIN_PHP, '<' ) ) {
 }
 
 global $wp_version;
-if ( isset( $wp_version ) && version_compare( $wp_version, IWIESM_MIN_WP, '<' ) ) {
-	iwiesm_requirements_notice(
+if ( isset( $wp_version ) && version_compare( $wp_version, IWIESP_MIN_WP, '<' ) ) {
+	iwiesp_requirements_notice(
 		sprintf(
 			/* translators: 1: required WordPress version, 2: current WordPress version */
 			__( 'iWorks.ie Speed Monitor requires WordPress %1$s or higher. This site is running WordPress %2$s.', 'iworksie-speed-monitor' ),
-			IWIESM_MIN_WP,
+			IWIESP_MIN_WP,
 			$wp_version
 		)
 	);
 	return;
 }
 
-$iwiesm_prefixed = IWIESM_PATH . 'vendor-prefixed/autoload.php';
-if ( ! is_readable( $iwiesm_prefixed ) ) {
-	iwiesm_requirements_notice(
+$iwiesp_prefixed = IWIESP_PATH . 'vendor-prefixed/autoload.php';
+if ( ! is_readable( $iwiesp_prefixed ) ) {
+	iwiesp_requirements_notice(
 		__( 'iWorks.ie Speed Monitor is missing its vendor-prefixed library. Run composer install, or install the release zip from wordpress.org.', 'iworksie-speed-monitor' )
 	);
 	return;
 }
-require_once $iwiesm_prefixed;
+require_once $iwiesp_prefixed;
 
-$iwiesm_autoload = IWIESM_PATH . 'vendor/autoload.php';
-if ( is_readable( $iwiesm_autoload ) ) {
-	require_once $iwiesm_autoload;
+$iwiesp_autoload = IWIESP_PATH . 'vendor/autoload.php';
+if ( is_readable( $iwiesp_autoload ) ) {
+	require_once $iwiesp_autoload;
 } else {
 	spl_autoload_register(
 		static function ( $class_name ) {
@@ -85,7 +85,7 @@ if ( is_readable( $iwiesm_autoload ) ) {
 				return;
 			}
 			$relative = substr( $class_name, strlen( $prefix ) );
-			$file     = IWIESM_PATH . 'src/' . str_replace( '\\', '/', $relative ) . '.php';
+			$file     = IWIESP_PATH . 'src/' . str_replace( '\\', '/', $relative ) . '.php';
 			if ( is_readable( $file ) ) {
 				require_once $file;
 			}
@@ -100,7 +100,7 @@ add_action(
 	'plugins_loaded',
 	static function () {
 		if ( ! class_exists( '\IWorksIE\SpeedMonitor\Vendor\IWorksIE\Core\Core' ) ) {
-			iwiesm_requirements_notice(
+			iwiesp_requirements_notice(
 				__( 'iWorks.ie Speed Monitor could not load its shared tools library.', 'iworksie-speed-monitor' )
 			);
 			return;

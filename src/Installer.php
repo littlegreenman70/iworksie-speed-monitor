@@ -16,7 +16,7 @@ use IWorksIE\SpeedMonitor\Storage\Results;
 final class Installer {
 
 	const DB_VERSION = '1';
-	const OPTION     = 'iwiesm_db_version';
+	const OPTION     = 'iwiesp_db_version';
 
 	/**
 	 * Activation hook.

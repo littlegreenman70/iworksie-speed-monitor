@@ -4,7 +4,7 @@
 (function () {
 	'use strict';
 
-	var cfg = window.iwiesmAdmin;
+	var cfg = window.iwiespAdmin;
 	if (!cfg) {
 		return;
 	}
@@ -28,10 +28,10 @@
 
 	function setProgress(pct, message) {
 		if (window.iwtCoreUi && typeof window.iwtCoreUi.setProgress === 'function') {
-			window.iwtCoreUi.setProgress('iwiesm-progress', pct, message);
+			window.iwtCoreUi.setProgress('iwiesp-progress', pct, message);
 			return;
 		}
-		var el = document.getElementById('iwiesm-progress');
+		var el = document.getElementById('iwiesp-progress');
 		if (!el) {
 			return;
 		}
@@ -42,7 +42,7 @@
 	}
 
 	function addError(text) {
-		var box = document.querySelector('[data-iwiesm-errors]');
+		var box = document.querySelector('[data-iwiesp-errors]');
 		if (!box) {
 			return;
 		}
@@ -56,7 +56,7 @@
 
 	function runOne(test) {
 		var body = new window.FormData();
-		body.append('action', 'iwiesm_run_test');
+		body.append('action', 'iwiesp_run_test');
 		body.append('nonce', cfg.nonce);
 		body.append('url', test.url);
 		body.append('strategy', test.strategy);
@@ -83,12 +83,12 @@
 			b.disabled = true;
 			b.setAttribute('aria-busy', 'true');
 		});
-		var progress = document.getElementById('iwiesm-progress');
+		var progress = document.getElementById('iwiesp-progress');
 		if (progress) {
 			progress.classList.remove('is-idle');
 			progress.hidden = false;
 		}
-		var box = document.querySelector('[data-iwiesm-errors]');
+		var box = document.querySelector('[data-iwiesp-errors]');
 		if (box) {
 			box.textContent = '';
 		}
@@ -118,19 +118,19 @@
 	}
 
 	document.addEventListener('DOMContentLoaded', function () {
-		var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-iwiesm-run]'));
+		var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-iwiesp-run]'));
 		buttons.forEach(function (btn) {
 			btn.addEventListener('click', function () {
 				runAll(buttons);
 			});
 		});
 
-		var progress = document.getElementById('iwiesm-progress');
+		var progress = document.getElementById('iwiesp-progress');
 		if (progress) {
 			progress.hidden = true;
 		}
 
-		Array.prototype.slice.call(document.querySelectorAll('form[data-iwiesm-confirm]')).forEach(function (form) {
+		Array.prototype.slice.call(document.querySelectorAll('form[data-iwiesp-confirm]')).forEach(function (form) {
 			form.addEventListener('submit', function (e) {
 				// eslint-disable-next-line no-alert
 				if (!window.confirm(cfg.strings.confirmClear)) {

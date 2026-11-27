@@ -40,7 +40,7 @@ final class Results {
 	 */
 	public static function table() {
 		global $wpdb;
-		return $wpdb->prefix . 'iwiesm_results';
+		return $wpdb->prefix . 'iwiesp_results';
 	}
 
 	/**

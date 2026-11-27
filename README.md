@@ -6,7 +6,7 @@ Part of the **iWorks Tools** suite (shared menu via [`iworksie/tools-core`](http
 
 - Slug / text domain: `iworksie-speed-monitor`
 - Namespace: `IWorksIE\SpeedMonitor\` (PSR-4 from `src/`)
-- Prefix: `iwiesm_` / `IWIESM_`
+- Prefix: `iwiesp_` / `IWIESP_`
 - Requires WordPress 6.5+, PHP 7.4+
 
 ## Development
@@ -32,7 +32,7 @@ Code must stay PHP 7.4 compatible: no PHP 8-only syntax (named arguments, `match
 | Google API call (one URL + one device per request, key redacted from errors) | `src/Psi/Client.php` |
 | Response → small stored row (score, lab + field metrics, top 3 fixes) | `src/Psi/Parser.php` |
 | Plain-English advice per Lighthouse audit/insight topic | `src/Psi/Advice.php` |
-| History table `{prefix}iwiesm_results` | `src/Storage/Results.php`, `src/Installer.php` |
+| History table `{prefix}iwiesp_results` | `src/Storage/Results.php`, `src/Installer.php` |
 | Schedule: recurring event fills a queue, single events run one test every 30 s, retries 429/5xx once | `src/Scheduler.php` |
 | Drop alerts, one digest email per run | `src/Alerts.php` |
 | Admin screens (Overview / History / Settings), AJAX and form handlers | `src/Admin/` |

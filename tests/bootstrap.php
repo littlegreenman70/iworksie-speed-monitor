@@ -5,40 +5,40 @@
  * @package IWorksIE\SpeedMonitor
  */
 
-$iwiesm_root = dirname( __DIR__ );
+$iwiesp_root = dirname( __DIR__ );
 
-require_once $iwiesm_root . '/vendor/autoload.php';
+require_once $iwiesp_root . '/vendor/autoload.php';
 
-$iwiesm_prefixed = $iwiesm_root . '/vendor-prefixed/autoload.php';
-if ( is_readable( $iwiesm_prefixed ) ) {
-	require_once $iwiesm_prefixed;
+$iwiesp_prefixed = $iwiesp_root . '/vendor-prefixed/autoload.php';
+if ( is_readable( $iwiesp_prefixed ) ) {
+	require_once $iwiesp_prefixed;
 }
 
-$iwiesm_suite = getenv( 'IWIESM_TESTSUITE' );
-if ( ! $iwiesm_suite ) {
-	$iwiesm_suite = 'unit';
+$iwiesp_suite = getenv( 'IWIESP_TESTSUITE' );
+if ( ! $iwiesp_suite ) {
+	$iwiesp_suite = 'unit';
 }
 
-if ( 'integration' === $iwiesm_suite ) {
-	$iwiesm_wp_tests = getenv( 'WP_TESTS_DIR' );
-	if ( ! $iwiesm_wp_tests ) {
-		$iwiesm_wp_tests = $iwiesm_root . '/tests/wordpress/wordpress-tests-lib';
+if ( 'integration' === $iwiesp_suite ) {
+	$iwiesp_wp_tests = getenv( 'WP_TESTS_DIR' );
+	if ( ! $iwiesp_wp_tests ) {
+		$iwiesp_wp_tests = $iwiesp_root . '/tests/wordpress/wordpress-tests-lib';
 	}
-	if ( ! is_readable( $iwiesm_wp_tests . '/includes/functions.php' ) ) {
-		fwrite( STDERR, "WP test suite not found at {$iwiesm_wp_tests}. Run bin/install-wp-tests.sh first.\n" );
+	if ( ! is_readable( $iwiesp_wp_tests . '/includes/functions.php' ) ) {
+		fwrite( STDERR, "WP test suite not found at {$iwiesp_wp_tests}. Run bin/install-wp-tests.sh first.\n" );
 		exit( 1 );
 	}
-	require_once $iwiesm_wp_tests . '/includes/functions.php';
+	require_once $iwiesp_wp_tests . '/includes/functions.php';
 
 	tests_add_filter(
 		'muplugins_loaded',
-		static function () use ( $iwiesm_root ) {
-			$plugin = $iwiesm_root . '/iworksie-speed-monitor.php';
+		static function () use ( $iwiesp_root ) {
+			$plugin = $iwiesp_root . '/iworksie-speed-monitor.php';
 			if ( is_readable( $plugin ) ) {
 				require $plugin;
 			}
-			$ex1 = dirname( $iwiesm_root ) . '/iworks-tools-core/examples/iworksie-example-one/iworksie-example-one.php';
-			$ex2 = dirname( $iwiesm_root ) . '/iworks-tools-core/examples/iworksie-example-two/iworksie-example-two.php';
+			$ex1 = dirname( $iwiesp_root ) . '/iworks-tools-core/examples/iworksie-example-one/iworksie-example-one.php';
+			$ex2 = dirname( $iwiesp_root ) . '/iworks-tools-core/examples/iworksie-example-two/iworksie-example-two.php';
 			if ( is_readable( $ex1 ) ) {
 				require $ex1;
 			}
@@ -48,5 +48,5 @@ if ( 'integration' === $iwiesm_suite ) {
 		}
 	);
 
-	require_once $iwiesm_wp_tests . '/includes/bootstrap.php';
+	require_once $iwiesp_wp_tests . '/includes/bootstrap.php';
 }

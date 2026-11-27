@@ -73,11 +73,11 @@ final class Plugin {
 
 		$this->core = Core::boot(
 			array(
-				'plugin_file' => IWIESM_FILE,
+				'plugin_file' => IWIESP_FILE,
 				'slug'        => self::SLUG,
-				'prefix'      => 'iwiesm',
+				'prefix'      => 'iwiesp',
 				'name'        => __( 'Speed Monitor', 'iworksie-speed-monitor' ),
-				'version'     => IWIESM_VERSION,
+				'version'     => IWIESP_VERSION,
 				'text_domain' => 'iworksie-speed-monitor',
 				'capability'  => self::CAPABILITY,
 				'wporg_url'   => 'https://wordpress.org/plugins/iworksie-speed-monitor/',
@@ -100,7 +100,7 @@ final class Plugin {
 
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
-		add_filter( 'plugin_action_links_' . plugin_basename( IWIESM_FILE ), array( $this, 'action_links' ) );
+		add_filter( 'plugin_action_links_' . plugin_basename( IWIESP_FILE ), array( $this, 'action_links' ) );
 	}
 
 	/**
@@ -143,16 +143,16 @@ final class Plugin {
 			return;
 		}
 		wp_enqueue_style(
-			'iwiesm-admin',
-			IWIESM_URL . 'assets/css/admin.css',
-			array( 'iwiesm-iwt-core' ),
-			IWIESM_VERSION
+			'iwiesp-admin',
+			IWIESP_URL . 'assets/css/admin.css',
+			array( 'iwiesp-iwt-core' ),
+			IWIESP_VERSION
 		);
 		wp_enqueue_script(
-			'iwiesm-admin',
-			IWIESM_URL . 'assets/js/admin.js',
-			array( 'iwiesm-iwt-core' ),
-			IWIESM_VERSION,
+			'iwiesp-admin',
+			IWIESP_URL . 'assets/js/admin.js',
+			array( 'iwiesp-iwt-core' ),
+			IWIESP_VERSION,
 			true
 		);
 
@@ -167,11 +167,11 @@ final class Plugin {
 		}
 
 		wp_localize_script(
-			'iwiesm-admin',
-			'iwiesmAdmin',
+			'iwiesp-admin',
+			'iwiespAdmin',
 			array(
 				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-				'nonce'   => wp_create_nonce( 'iwiesm_test' ),
+				'nonce'   => wp_create_nonce( 'iwiesp_test' ),
 				'tests'   => $tests,
 				'strings' => array(
 					/* translators: 1: current test number, 2: total tests, 3: page path, 4: device */

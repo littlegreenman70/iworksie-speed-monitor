@@ -66,13 +66,13 @@ final class Sparkline {
 		$guides = '';
 		foreach ( array( 90, 50 ) as $level ) {
 			$guide   = self::points( array( $level, $level ), $width, $height );
-			$guides .= '<line class="iwiesm-spark__guide" x1="0" x2="' . esc_attr( (string) $width ) . '" y1="' . esc_attr( (string) $guide[0][1] ) . '" y2="' . esc_attr( (string) $guide[0][1] ) . '" />';
+			$guides .= '<line class="iwiesp-spark__guide" x1="0" x2="' . esc_attr( (string) $width ) . '" y1="' . esc_attr( (string) $guide[0][1] ) . '" y2="' . esc_attr( (string) $guide[0][1] ) . '" />';
 		}
 
-		return '<svg class="iwiesm-spark iwiesm-spark--' . esc_attr( $band ) . '" width="' . esc_attr( (string) $width ) . '" height="' . esc_attr( (string) $height ) . '" viewBox="0 0 ' . esc_attr( $width . ' ' . $height ) . '" role="img" aria-label="' . esc_attr( $label ) . '" focusable="false">'
+		return '<svg class="iwiesp-spark iwiesp-spark--' . esc_attr( $band ) . '" width="' . esc_attr( (string) $width ) . '" height="' . esc_attr( (string) $height ) . '" viewBox="0 0 ' . esc_attr( $width . ' ' . $height ) . '" role="img" aria-label="' . esc_attr( $label ) . '" focusable="false">'
 			. $guides
-			. '<polyline class="iwiesm-spark__line" fill="none" points="' . esc_attr( implode( ' ', $coords ) ) . '" />'
-			. '<circle class="iwiesm-spark__dot" r="3" cx="' . esc_attr( (string) $last[0] ) . '" cy="' . esc_attr( (string) $last[1] ) . '" />'
+			. '<polyline class="iwiesp-spark__line" fill="none" points="' . esc_attr( implode( ' ', $coords ) ) . '" />'
+			. '<circle class="iwiesp-spark__dot" r="3" cx="' . esc_attr( (string) $last[0] ) . '" cy="' . esc_attr( (string) $last[1] ) . '" />'
 			. '</svg>';
 	}
 }
