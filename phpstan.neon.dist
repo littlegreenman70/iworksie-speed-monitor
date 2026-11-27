@@ -1,0 +1,19 @@
+includes:
+	- vendor/szepeviktor/phpstan-wordpress/extension.neon
+
+parameters:
+	level: 6
+	treatPhpDocTypesAsCertain: false
+	paths:
+		- iworksie-speed-monitor.php
+		- uninstall.php
+		- src
+	bootstrapFiles:
+		- tests/phpstan-bootstrap.php
+	scanFiles:
+		- vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
+	excludePaths:
+		- vendor
+		- vendor-prefixed
+		- build
+		- tests/wordpress

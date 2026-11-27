@@ -1,0 +1,269 @@
+{
+ "captchaResult": "CAPTCHA_NOT_NEEDED",
+ "kind": "pagespeedonline#result",
+ "id": "https://example.org/",
+ "loadingExperience": {
+  "id": "https://example.org/",
+  "metrics": {
+   "LARGEST_CONTENTFUL_PAINT_MS": {
+    "percentile": 2900,
+    "category": "AVERAGE"
+   },
+   "INTERACTION_TO_NEXT_PAINT": {
+    "percentile": 180,
+    "category": "FAST"
+   },
+   "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+    "percentile": 5,
+    "category": "FAST"
+   },
+   "FIRST_CONTENTFUL_PAINT_MS": {
+    "percentile": 1900,
+    "category": "AVERAGE"
+   },
+   "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+    "percentile": 950,
+    "category": "AVERAGE"
+   }
+  },
+  "overall_category": "AVERAGE",
+  "initial_url": "https://example.org/",
+  "origin_fallback": true
+ },
+ "originLoadingExperience": {
+  "id": "https://example.org",
+  "metrics": {
+   "LARGEST_CONTENTFUL_PAINT_MS": {
+    "percentile": 2900
+   }
+  },
+  "overall_category": "AVERAGE"
+ },
+ "lighthouseResult": {
+  "requestedUrl": "https://example.org/",
+  "finalUrl": "https://example.org/",
+  "lighthouseVersion": "12.8.2",
+  "categories": {
+   "performance": {
+    "id": "performance",
+    "title": "Performance",
+    "score": null,
+    "auditRefs": [
+     {
+      "id": "first-contentful-paint",
+      "weight": 10,
+      "group": "metrics"
+     },
+     {
+      "id": "largest-contentful-paint",
+      "weight": 25,
+      "group": "metrics"
+     },
+     {
+      "id": "total-blocking-time",
+      "weight": 30,
+      "group": "metrics"
+     },
+     {
+      "id": "cumulative-layout-shift",
+      "weight": 25,
+      "group": "metrics"
+     },
+     {
+      "id": "speed-index",
+      "weight": 10,
+      "group": "metrics"
+     },
+     {
+      "id": "render-blocking-insight",
+      "weight": 0,
+      "group": "insights"
+     },
+     {
+      "id": "image-delivery-insight",
+      "weight": 0,
+      "group": "insights"
+     },
+     {
+      "id": "third-parties-insight",
+      "weight": 0,
+      "group": "insights"
+     },
+     {
+      "id": "dom-size-insight",
+      "weight": 0,
+      "group": "insights"
+     },
+     {
+      "id": "viewport-insight",
+      "weight": 0,
+      "group": "insights"
+     },
+     {
+      "id": "some-new-insight",
+      "weight": 0,
+      "group": "insights"
+     },
+     {
+      "id": "render-blocking-resources",
+      "weight": 0,
+      "group": "hidden"
+     },
+     {
+      "id": "unused-javascript",
+      "weight": 0,
+      "group": "diagnostics"
+     }
+    ]
+   }
+  },
+  "audits": {
+   "first-contentful-paint": {
+    "id": "first-contentful-paint",
+    "title": "First Contentful Paint",
+    "description": "First Contentful Paint. [Learn more about this](https://developer.chrome.com/docs/lighthouse/).",
+    "score": 0.45,
+    "scoreDisplayMode": "numeric",
+    "numericValue": 3120.5,
+    "displayValue": "3.1 s"
+   },
+   "largest-contentful-paint": {
+    "id": "largest-contentful-paint",
+    "title": "Largest Contentful Paint",
+    "description": "Largest Contentful Paint. [Learn more about this](https://developer.chrome.com/docs/lighthouse/).",
+    "score": 0.2,
+    "scoreDisplayMode": "numeric",
+    "numericValue": 5480.2,
+    "displayValue": "5.5 s"
+   },
+   "total-blocking-time": {
+    "id": "total-blocking-time",
+    "title": "Total Blocking Time",
+    "description": "Total Blocking Time. [Learn more about this](https://developer.chrome.com/docs/lighthouse/).",
+    "score": 0.71,
+    "scoreDisplayMode": "numeric",
+    "numericValue": 310.0,
+    "displayValue": "310 ms"
+   },
+   "cumulative-layout-shift": {
+    "id": "cumulative-layout-shift",
+    "title": "Cumulative Layout Shift",
+    "description": "Cumulative Layout Shift. [Learn more about this](https://developer.chrome.com/docs/lighthouse/).",
+    "score": 0.9,
+    "scoreDisplayMode": "numeric",
+    "numericValue": 0.0812,
+    "displayValue": "0.081"
+   },
+   "speed-index": {
+    "id": "speed-index",
+    "title": "Speed Index",
+    "description": "Speed Index. [Learn more about this](https://developer.chrome.com/docs/lighthouse/).",
+    "score": 0.55,
+    "scoreDisplayMode": "numeric",
+    "numericValue": 4890.0,
+    "displayValue": "4.9 s"
+   },
+   "render-blocking-insight": {
+    "id": "render-blocking-insight",
+    "title": "Render blocking requests",
+    "description": "Render blocking requests. [Learn more about this](https://developer.chrome.com/docs/lighthouse/).",
+    "score": 0,
+    "scoreDisplayMode": "metricSavings",
+    "details": {
+     "type": "table",
+     "items": []
+    },
+    "metricSavings": {
+     "FCP": 1450,
+     "LCP": 1450
+    }
+   },
+   "render-blocking-resources": {
+    "id": "render-blocking-resources",
+    "title": "Eliminate render-blocking resources",
+    "description": "Eliminate render-blocking resources. [Learn more about this](https://developer.chrome.com/docs/lighthouse/).",
+    "score": 0,
+    "scoreDisplayMode": "metricSavings",
+    "details": {
+     "type": "opportunity",
+     "overallSavingsMs": 1500,
+     "items": []
+    }
+   },
+   "image-delivery-insight": {
+    "id": "image-delivery-insight",
+    "title": "Improve image delivery",
+    "description": "Improve image delivery. [Learn more about this](https://developer.chrome.com/docs/lighthouse/).",
+    "score": 0,
+    "scoreDisplayMode": "metricSavings",
+    "details": {
+     "type": "table",
+     "items": []
+    },
+    "metricSavings": {
+     "FCP": 0,
+     "LCP": 900
+    }
+   },
+   "unused-javascript": {
+    "id": "unused-javascript",
+    "title": "Reduce unused JavaScript",
+    "description": "Reduce unused JavaScript. [Learn more about this](https://developer.chrome.com/docs/lighthouse/).",
+    "score": 0.5,
+    "scoreDisplayMode": "metricSavings",
+    "details": {
+     "type": "opportunity",
+     "overallSavingsMs": 600,
+     "overallSavingsBytes": 245760,
+     "items": []
+    }
+   },
+   "third-parties-insight": {
+    "id": "third-parties-insight",
+    "title": "3rd parties",
+    "description": "3rd parties. [Learn more about this](https://developer.chrome.com/docs/lighthouse/).",
+    "score": 0.5,
+    "scoreDisplayMode": "metricSavings",
+    "details": {
+     "type": "table",
+     "items": []
+    },
+    "metricSavings": {
+     "TBT": 120
+    }
+   },
+   "dom-size-insight": {
+    "id": "dom-size-insight",
+    "title": "Optimize DOM size",
+    "description": "Optimize DOM size. [Learn more about this](https://developer.chrome.com/docs/lighthouse/).",
+    "score": 1,
+    "scoreDisplayMode": "metricSavings",
+    "metricSavings": {
+     "TBT": 0
+    }
+   },
+   "viewport-insight": {
+    "id": "viewport-insight",
+    "title": "Optimize viewport for mobile",
+    "description": "Optimize viewport for mobile. [Learn more about this](https://developer.chrome.com/docs/lighthouse/).",
+    "score": null,
+    "scoreDisplayMode": "notApplicable"
+   },
+   "some-new-insight": {
+    "id": "some-new-insight",
+    "title": "A brand new insight",
+    "description": "Something new. [Learn more](https://example.com).",
+    "score": 0,
+    "scoreDisplayMode": "metricSavings",
+    "metricSavings": {
+     "LCP": 50
+    }
+   }
+  },
+  "runtimeError": {
+   "code": "NO_FCP",
+   "message": "The page did not paint any content."
+  }
+ },
+ "analysisUTCTimestamp": "2026-11-26T23:00:00.000Z"
+}
