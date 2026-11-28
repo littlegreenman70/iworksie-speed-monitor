@@ -99,4 +99,5 @@ Everything it created: the history table, its settings, your saved API key, and 
 == Changelog ==
 
 = 1.0.0 =
+* Use singular/plural forms for the finished-with-failures message.
 * First release.

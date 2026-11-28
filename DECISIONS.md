@@ -15,3 +15,7 @@
 13. **Capability `manage_options`** (per site, also on multisite where each site has its own table and settings).
 14. **Migrated sites.** Saved URLs are not rewritten if the site's domain changes; a search-replace during migration updates them, and pages on a foreign host are rejected when settings are next saved.
 15. **Prefix is `iwiesp` / `IWIESP_`** (sp = Speed Monitor; `iwiesm` belongs to SMTP).
+
+### 2026-11-28 plurals / final pass
+- Plural forms for finished-with-failures JS string via `wp.i18n._n` / singular+plural localize; `wp-i18n` dependency + `wp_set_script_translations`.
+

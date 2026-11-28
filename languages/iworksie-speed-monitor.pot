@@ -9,35 +9,41 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-27T00:04:18+00:00\n"
+"POT-Creation-Date: 2026-11-28T17:46:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: iworksie-speed-monitor\n"
 
 #. Plugin Name of the plugin
+#: iworksie-speed-monitor.php
 msgid "iWorks.ie Speed Monitor"
 msgstr ""
 
 #. Plugin URI of the plugin
 #. Author URI of the plugin
+#: iworksie-speed-monitor.php
 msgid "https://www.iworks.ie"
 msgstr ""
 
 #. Description of the plugin
+#: iworksie-speed-monitor.php
 msgid "Track your site's speed over time using Google PageSpeed Insights: scheduled tests, history, drop alerts, and plain-English fixes. Real-visitor and lab numbers are clearly labelled."
 msgstr ""
 
 #. Author of the plugin
+#: iworksie-speed-monitor.php
 msgid "iWorks.ie"
 msgstr ""
 
 #. translators: 1: required PHP version, 2: current PHP version
 #: iworksie-speed-monitor.php:47
+#, php-format
 msgid "iWorks.ie Speed Monitor requires PHP %1$s or higher. This site is running PHP %2$s."
 msgstr ""
 
 #. translators: 1: required WordPress version, 2: current WordPress version
 #: iworksie-speed-monitor.php:60
+#, php-format
 msgid "iWorks.ie Speed Monitor requires WordPress %1$s or higher. This site is running WordPress %2$s."
 msgstr ""
 
@@ -64,6 +70,7 @@ msgstr ""
 
 #. translators: 1: max number of pages, 2: list of rejected addresses
 #: src/Admin/Actions.php:86
+#, php-format
 msgid "Some addresses were not added. Only pages on this site can be monitored (up to %1$d): %2$s"
 msgstr ""
 
@@ -103,6 +110,7 @@ msgstr ""
 
 #. translators: %s: human time difference, e.g. "3 hours"
 #: src/Admin/Screens.php:106
+#, php-format
 msgid "%s ago"
 msgstr ""
 
@@ -128,6 +136,7 @@ msgstr ""
 
 #. translators: %d: number of tests
 #: src/Admin/Screens.php:179
+#, php-format
 msgid "This runs %d test. Each one takes 15 to 60 seconds."
 msgid_plural "This runs %d tests. Each one takes 15 to 60 seconds."
 msgstr[0] ""
@@ -148,6 +157,7 @@ msgstr ""
 
 #. translators: %d: number of tests left
 #: src/Admin/Screens.php:220
+#, php-format
 msgid "Scheduled run in progress: %d test left."
 msgid_plural "Scheduled run in progress: %d tests left."
 msgstr[0] ""
@@ -163,6 +173,7 @@ msgstr ""
 
 #. translators: %s: date and time of next run
 #: src/Admin/Screens.php:229
+#, php-format
 msgid "Next run: %s."
 msgstr ""
 
@@ -173,6 +184,7 @@ msgstr ""
 
 #. translators: %s: device name
 #: src/Admin/Screens.php:275
+#, php-format
 msgid "Top fixes (from the %s test)"
 msgstr ""
 
@@ -186,11 +198,13 @@ msgstr ""
 
 #. translators: %s: time, e.g. "1.2 s"
 #: src/Admin/Screens.php:320
+#, php-format
 msgid "Google estimates fixing this could save about %s."
 msgstr ""
 
 #. translators: %s: size, e.g. "340 KB"
 #: src/Admin/Screens.php:323
+#, php-format
 msgid "Google estimates fixing this could save about %s of downloads."
 msgstr ""
 
@@ -208,6 +222,7 @@ msgstr ""
 
 #. translators: 1: time ago, 2: error message
 #: src/Admin/Screens.php:359
+#, php-format
 msgid "Last test failed (%1$s): %2$s"
 msgstr ""
 
@@ -225,21 +240,25 @@ msgstr ""
 
 #. translators: %d: points
 #: src/Admin/Screens.php:390
+#, php-format
 msgid "Up %d since the previous test"
 msgstr ""
 
 #. translators: %d: points
 #: src/Admin/Screens.php:394
+#, php-format
 msgid "Down %d since the previous test"
 msgstr ""
 
 #. translators: %s: time ago
 #: src/Admin/Screens.php:402
+#, php-format
 msgid "Tested %s"
 msgstr ""
 
 #. translators: 1: number of tests, 2: lowest score, 3: highest score, 4: latest score
 #: src/Admin/Screens.php:410
+#, php-format
 msgid "Score trend over the last %1$d tests: lowest %2$d, highest %3$d, latest %4$d."
 msgstr ""
 
@@ -261,16 +280,19 @@ msgstr ""
 
 #. translators: %s: "phone visitors" or "desktop visitors"
 #: src/Admin/Screens.php:430
+#, php-format
 msgid "Not enough real-visitor data yet. Google only reports this when enough Chrome users (%s) visit the site; until then, use the lab test below."
 msgstr ""
 
 #. translators: %s: "phone visitors" or "desktop visitors"
 #: src/Admin/Screens.php:437
+#, php-format
 msgid "This page, %s, last 28 days (Chrome UX Report, 75th percentile)."
 msgstr ""
 
 #. translators: %s: "phone visitors" or "desktop visitors"
 #: src/Admin/Screens.php:439
+#, php-format
 msgid "Whole site (not enough data for this page alone), %s, last 28 days (Chrome UX Report, 75th percentile)."
 msgstr ""
 
@@ -383,6 +405,7 @@ msgstr ""
 
 #. translators: 1: number of stored tests, 2: number of days kept
 #: src/Admin/Screens.php:618
+#, php-format
 msgid "%1$d test stored. Tests older than %2$d days are removed automatically."
 msgid_plural "%1$d tests stored. Tests older than %2$d days are removed automatically."
 msgstr[0] ""
@@ -398,6 +421,7 @@ msgstr ""
 
 #. translators: %d: max number of pages
 #: src/Admin/Screens.php:648
+#, php-format
 msgid "One address per line, up to %d. Only pages on this site. You can also write a path such as /contact/. Pick your most important pages: home, a popular post, a product or contact page."
 msgstr ""
 
@@ -495,6 +519,7 @@ msgstr ""
 
 #. translators: %s: masked key
 #: src/Admin/Screens.php:705
+#, php-format
 msgid "Set in wp-config.php (IWIESP_PSI_API_KEY): %s"
 msgstr ""
 
@@ -528,31 +553,35 @@ msgstr ""
 
 #. translators: %s: site name
 #: src/Alerts.php:65
+#, php-format
 msgid "Speed Monitor found a speed drop on %s:"
 msgstr ""
 
 #: src/Alerts.php:70
-#: src/Plugin.php:180
+#: src/Plugin.php:181
 msgid "desktop"
 msgstr ""
 
 #: src/Alerts.php:70
-#: src/Plugin.php:179
+#: src/Plugin.php:180
 msgid "mobile"
 msgstr ""
 
 #. translators: 1: page URL, 2: device, 3: old score, 4: new score
 #: src/Alerts.php:74
+#, php-format
 msgid "- %1$s (%2$s): score dropped from %3$d to %4$d"
 msgstr ""
 
 #. translators: 1: page URL, 2: device, 3: old score, 4: new score, 5: threshold
 #: src/Alerts.php:83
+#, php-format
 msgid "- %1$s (%2$s): score dropped from %3$d to %4$d, below your alert level of %5$d"
 msgstr ""
 
 #. translators: 1: page URL, 2: device, 3: score, 4: threshold
 #: src/Alerts.php:93
+#, php-format
 msgid "- %1$s (%2$s): score is %3$d, below your alert level of %4$d"
 msgstr ""
 
@@ -570,6 +599,7 @@ msgstr ""
 
 #. translators: 1: site name, 2: number of pages
 #: src/Alerts.php:128
+#, php-format
 msgid "[%1$s] Speed drop on %2$d page"
 msgid_plural "[%1$s] Speed drop on %2$d pages"
 msgstr[0] ""
@@ -594,28 +624,36 @@ msgid "Open"
 msgstr ""
 
 #. translators: 1: current test number, 2: total tests, 3: page path, 4: device
-#: src/Plugin.php:178
+#: src/Plugin.php:179
+#, php-format
 msgid "Testing %1$d of %2$d: %3$s (%4$s). Each test takes 15–60 seconds…"
 msgstr ""
 
 #. translators: %d: number of failed tests
-#: src/Plugin.php:182
-msgid "Finished with %d failed test(s). Reloading…"
-msgstr ""
-
 #: src/Plugin.php:183
-msgid "All tests finished. Reloading…"
+#, php-format
+msgid "Finished with %d failed test. Reloading…"
 msgstr ""
 
-#: src/Plugin.php:184
-msgid "Test failed:"
-msgstr ""
-
+#. translators: %d: number of failed tests
 #: src/Plugin.php:185
-msgid "The request failed. Your server may have timed out; try again, or rely on scheduled tests."
+#, php-format
+msgid "Finished with %d failed tests. Reloading…"
 msgstr ""
 
 #: src/Plugin.php:186
+msgid "All tests finished. Reloading…"
+msgstr ""
+
+#: src/Plugin.php:187
+msgid "Test failed:"
+msgstr ""
+
+#: src/Plugin.php:188
+msgid "The request failed. Your server may have timed out; try again, or rely on scheduled tests."
+msgstr ""
+
+#: src/Plugin.php:189
 msgid "Delete all stored test history? This cannot be undone."
 msgstr ""
 
@@ -853,6 +891,7 @@ msgstr ""
 
 #. translators: %s: error message from the HTTP library
 #: src/Psi/Client.php:64
+#, php-format
 msgid "Could not reach Google PageSpeed Insights: %s"
 msgstr ""
 
@@ -878,11 +917,13 @@ msgstr ""
 
 #. translators: 1: HTTP status code, 2: Google's error message
 #: src/Psi/Client.php:118
+#, php-format
 msgid "Google PageSpeed Insights returned an error (%1$d): %2$s"
 msgstr ""
 
 #. translators: %d: HTTP status code
 #: src/Psi/Client.php:121
+#, php-format
 msgid "Google PageSpeed Insights returned an unexpected response (HTTP %d). Try again later."
 msgstr ""
 
@@ -896,6 +937,7 @@ msgstr ""
 
 #. translators: %s: Lighthouse error message
 #: src/Runner.php:70
+#, php-format
 msgid "Google could not test the page: %s"
 msgstr ""
 
@@ -969,10 +1011,12 @@ msgstr ""
 
 #. translators: %s: number of seconds, e.g. 2.4
 #: src/Support/Metrics.php:145
+#, php-format
 msgid "%s s"
 msgstr ""
 
 #. translators: %s: number of milliseconds
 #: src/Support/Metrics.php:148
+#, php-format
 msgid "%s ms"
 msgstr ""

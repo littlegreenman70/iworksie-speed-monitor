@@ -17,6 +17,13 @@
 		});
 	}
 
+	function plural(singular, pluralForm, count) {
+		if (window.wp && wp.i18n && typeof wp.i18n._n === 'function') {
+			return wp.i18n.sprintf(wp.i18n._n(singular, pluralForm, count, 'iworksie-speed-monitor'), count);
+		}
+		return format(count === 1 ? singular : pluralForm, [count]);
+	}
+
 	function pathOf(url) {
 		try {
 			var u = new window.URL(url);
@@ -95,7 +102,16 @@
 
 		function next() {
 			if (index >= total) {
-				setProgress(100, failed ? format(cfg.strings.doneErrors, [failed]) : cfg.strings.done);
+				setProgress(
+					100,
+					failed
+						? plural(
+							cfg.strings.doneErrorsSingular || 'Finished with %d failed test. Reloading…',
+							cfg.strings.doneErrorsPlural || 'Finished with %d failed tests. Reloading…',
+							failed
+						)
+						: cfg.strings.done
+				);
 				window.setTimeout(function () {
 					window.location.reload();
 				}, failed ? 4000 : 800);

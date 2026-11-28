@@ -20,3 +20,8 @@ Before wordpress.org submission:
 - [ ] Run against the live Google API with a real key on iworks.ie (only faked responses were possible in the build sandbox)
 - [ ] Real screenshots for `.wordpress-org/` (screenshot-1..4, taken on a real site, not fixtures)
 - [ ] Banner (772x250, 1544x500) and icon (128, 256), same as Health Check
+
+## 2026-11-28 final 1.0.0 pass
+- Plural forms for finished-with-failures JS string via `wp.i18n._n` / singular+plural localize; `wp-i18n` dependency + `wp_set_script_translations`.
+- Lint/analyse/unit/integration/build/Plugin Check re-run; zip refreshed in ~/Downloads.
+

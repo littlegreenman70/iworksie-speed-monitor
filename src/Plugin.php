@@ -151,10 +151,11 @@ final class Plugin {
 		wp_enqueue_script(
 			'iwiesp-admin',
 			IWIESP_URL . 'assets/js/admin.js',
-			array( 'iwiesp-iwt-core' ),
+			array( 'iwiesp-iwt-core', 'wp-i18n' ),
 			IWIESP_VERSION,
 			true
 		);
+		wp_set_script_translations( 'iwiesp-admin', 'iworksie-speed-monitor' );
 
 		$tests = array();
 		foreach ( (array) Settings::value( 'urls' ) as $url ) {
@@ -175,15 +176,17 @@ final class Plugin {
 				'tests'   => $tests,
 				'strings' => array(
 					/* translators: 1: current test number, 2: total tests, 3: page path, 4: device */
-					'testing'      => __( 'Testing %1$d of %2$d: %3$s (%4$s). Each test takes 15–60 seconds…', 'iworksie-speed-monitor' ),
-					'mobile'       => __( 'mobile', 'iworksie-speed-monitor' ),
-					'desktop'      => __( 'desktop', 'iworksie-speed-monitor' ),
+					'testing'            => __( 'Testing %1$d of %2$d: %3$s (%4$s). Each test takes 15–60 seconds…', 'iworksie-speed-monitor' ),
+					'mobile'             => __( 'mobile', 'iworksie-speed-monitor' ),
+					'desktop'            => __( 'desktop', 'iworksie-speed-monitor' ),
 					/* translators: %d: number of failed tests */
-					'doneErrors'   => __( 'Finished with %d failed test(s). Reloading…', 'iworksie-speed-monitor' ),
-					'done'         => __( 'All tests finished. Reloading…', 'iworksie-speed-monitor' ),
-					'failed'       => __( 'Test failed:', 'iworksie-speed-monitor' ),
-					'requestError' => __( 'The request failed. Your server may have timed out; try again, or rely on scheduled tests.', 'iworksie-speed-monitor' ),
-					'confirmClear' => __( 'Delete all stored test history? This cannot be undone.', 'iworksie-speed-monitor' ),
+					'doneErrorsSingular' => __( 'Finished with %d failed test. Reloading…', 'iworksie-speed-monitor' ),
+					/* translators: %d: number of failed tests */
+					'doneErrorsPlural'   => __( 'Finished with %d failed tests. Reloading…', 'iworksie-speed-monitor' ),
+					'done'               => __( 'All tests finished. Reloading…', 'iworksie-speed-monitor' ),
+					'failed'             => __( 'Test failed:', 'iworksie-speed-monitor' ),
+					'requestError'       => __( 'The request failed. Your server may have timed out; try again, or rely on scheduled tests.', 'iworksie-speed-monitor' ),
+					'confirmClear'       => __( 'Delete all stored test history? This cannot be undone.', 'iworksie-speed-monitor' ),
 				),
 			)
 		);
