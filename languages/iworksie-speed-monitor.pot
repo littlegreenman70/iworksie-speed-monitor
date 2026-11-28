@@ -1,0 +1,1022 @@
+# Copyright (C) 2026 iWorks.ie
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: iWorks.ie Speed Monitor 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/iworksie-speed-monitor\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-28T17:46:22+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: iworksie-speed-monitor\n"
+
+#. Plugin Name of the plugin
+#: iworksie-speed-monitor.php
+msgid "iWorks.ie Speed Monitor"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: iworksie-speed-monitor.php
+msgid "https://www.iworks.ie"
+msgstr ""
+
+#. Description of the plugin
+#: iworksie-speed-monitor.php
+msgid "Track your site's speed over time using Google PageSpeed Insights: scheduled tests, history, drop alerts, and plain-English fixes. Real-visitor and lab numbers are clearly labelled."
+msgstr ""
+
+#. Author of the plugin
+#: iworksie-speed-monitor.php
+msgid "iWorks.ie"
+msgstr ""
+
+#. translators: 1: required PHP version, 2: current PHP version
+#: iworksie-speed-monitor.php:47
+#, php-format
+msgid "iWorks.ie Speed Monitor requires PHP %1$s or higher. This site is running PHP %2$s."
+msgstr ""
+
+#. translators: 1: required WordPress version, 2: current WordPress version
+#: iworksie-speed-monitor.php:60
+#, php-format
+msgid "iWorks.ie Speed Monitor requires WordPress %1$s or higher. This site is running WordPress %2$s."
+msgstr ""
+
+#: iworksie-speed-monitor.php:71
+msgid "iWorks.ie Speed Monitor is missing its vendor-prefixed library. Run composer install, or install the release zip from wordpress.org."
+msgstr ""
+
+#: iworksie-speed-monitor.php:104
+msgid "iWorks.ie Speed Monitor could not load its shared tools library."
+msgstr ""
+
+#: src/Admin/Actions.php:44
+#: src/Admin/Actions.php:145
+msgid "Sorry, you are not allowed to do that."
+msgstr ""
+
+#: src/Admin/Actions.php:71
+msgid "That API key does not look right, so it was not saved. Google API keys are about 39 letters, numbers, dashes and underscores."
+msgstr ""
+
+#: src/Admin/Actions.php:81
+msgid "Settings saved."
+msgstr ""
+
+#. translators: 1: max number of pages, 2: list of rejected addresses
+#: src/Admin/Actions.php:86
+#, php-format
+msgid "Some addresses were not added. Only pages on this site can be monitored (up to %1$d): %2$s"
+msgstr ""
+
+#: src/Admin/Actions.php:132
+msgid "Test history deleted."
+msgstr ""
+
+#: src/Admin/Actions.php:153
+msgid "That page is not in your monitored list."
+msgstr ""
+
+#: src/Admin/Screens.php:48
+msgid "Sorry, you are not allowed to access this page."
+msgstr ""
+
+#: src/Admin/Screens.php:52
+msgid "Overview"
+msgstr ""
+
+#: src/Admin/Screens.php:53
+msgid "History"
+msgstr ""
+
+#: src/Admin/Screens.php:54
+msgid "Settings"
+msgstr ""
+
+#: src/Admin/Screens.php:91
+#: src/Admin/Screens.php:529
+msgid "Desktop"
+msgstr ""
+
+#: src/Admin/Screens.php:91
+#: src/Admin/Screens.php:528
+msgid "Mobile"
+msgstr ""
+
+#. translators: %s: human time difference, e.g. "3 hours"
+#: src/Admin/Screens.php:106
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#: src/Admin/Screens.php:150
+msgid "out of 100"
+msgstr ""
+
+#: src/Admin/Screens.php:163
+msgid "Tests run on Google's servers using PageSpeed Insights. Only the page address is sent to Google; nothing else leaves your site."
+msgstr ""
+
+#: src/Admin/Screens.php:167
+msgid "Tip: add your own free Google API key for reliable testing. Without one, Google often limits requests from shared hosting."
+msgstr ""
+
+#: src/Admin/Screens.php:168
+msgid "Add API key"
+msgstr ""
+
+#: src/Admin/Screens.php:175
+msgid "Run your first speed test"
+msgstr ""
+
+#. translators: %d: number of tests
+#: src/Admin/Screens.php:179
+#, php-format
+msgid "This runs %d test. Each one takes 15 to 60 seconds."
+msgid_plural "This runs %d tests. Each one takes 15 to 60 seconds."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin/Screens.php:184
+#: src/Admin/Screens.php:192
+msgid "Test now"
+msgstr ""
+
+#: src/Admin/Screens.php:194
+msgid "Change"
+msgstr ""
+
+#: src/Admin/Screens.php:214
+msgid "Scheduled tests are off."
+msgstr ""
+
+#. translators: %d: number of tests left
+#: src/Admin/Screens.php:220
+#, php-format
+msgid "Scheduled run in progress: %d test left."
+msgid_plural "Scheduled run in progress: %d tests left."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin/Screens.php:224
+msgid "Tests run daily."
+msgstr ""
+
+#: src/Admin/Screens.php:224
+msgid "Tests run weekly."
+msgstr ""
+
+#. translators: %s: date and time of next run
+#: src/Admin/Screens.php:229
+#, php-format
+msgid "Next run: %s."
+msgstr ""
+
+#: src/Admin/Screens.php:252
+#: src/Admin/Screens.php:717
+msgid "(opens in a new tab)"
+msgstr ""
+
+#. translators: %s: device name
+#: src/Admin/Screens.php:275
+#, php-format
+msgid "Top fixes (from the %s test)"
+msgstr ""
+
+#: src/Admin/Screens.php:299
+msgid "Some of these usually need changes to the theme or plugins."
+msgstr ""
+
+#: src/Admin/Screens.php:300
+msgid "iWorks can fix them for you →"
+msgstr ""
+
+#. translators: %s: time, e.g. "1.2 s"
+#: src/Admin/Screens.php:320
+#, php-format
+msgid "Google estimates fixing this could save about %s."
+msgstr ""
+
+#. translators: %s: size, e.g. "340 KB"
+#: src/Admin/Screens.php:323
+#, php-format
+msgid "Google estimates fixing this could save about %s of downloads."
+msgstr ""
+
+#: src/Admin/Screens.php:329
+msgid "Usually fixed in caching or hosting settings."
+msgstr ""
+
+#: src/Admin/Screens.php:332
+msgid "Usually fixed in your content or media library."
+msgstr ""
+
+#: src/Admin/Screens.php:335
+msgid "Usually fixed in the theme or plugins."
+msgstr ""
+
+#. translators: 1: time ago, 2: error message
+#: src/Admin/Screens.php:359
+#, php-format
+msgid "Last test failed (%1$s): %2$s"
+msgstr ""
+
+#: src/Admin/Screens.php:367
+msgid "Not tested yet."
+msgstr ""
+
+#: src/Admin/Screens.php:382
+msgid "Performance score (lab)"
+msgstr ""
+
+#: src/Admin/Screens.php:386
+msgid "No change since the previous test"
+msgstr ""
+
+#. translators: %d: points
+#: src/Admin/Screens.php:390
+#, php-format
+msgid "Up %d since the previous test"
+msgstr ""
+
+#. translators: %d: points
+#: src/Admin/Screens.php:394
+#, php-format
+msgid "Down %d since the previous test"
+msgstr ""
+
+#. translators: %s: time ago
+#: src/Admin/Screens.php:402
+#, php-format
+msgid "Tested %s"
+msgstr ""
+
+#. translators: 1: number of tests, 2: lowest score, 3: highest score, 4: latest score
+#: src/Admin/Screens.php:410
+#, php-format
+msgid "Score trend over the last %1$d tests: lowest %2$d, highest %3$d, latest %4$d."
+msgstr ""
+
+#: src/Admin/Screens.php:423
+msgid "desktop visitors"
+msgstr ""
+
+#: src/Admin/Screens.php:423
+msgid "phone visitors"
+msgstr ""
+
+#: src/Admin/Screens.php:425
+msgid "Real visitors"
+msgstr ""
+
+#: src/Admin/Screens.php:425
+msgid "Field data"
+msgstr ""
+
+#. translators: %s: "phone visitors" or "desktop visitors"
+#: src/Admin/Screens.php:430
+#, php-format
+msgid "Not enough real-visitor data yet. Google only reports this when enough Chrome users (%s) visit the site; until then, use the lab test below."
+msgstr ""
+
+#. translators: %s: "phone visitors" or "desktop visitors"
+#: src/Admin/Screens.php:437
+#, php-format
+msgid "This page, %s, last 28 days (Chrome UX Report, 75th percentile)."
+msgstr ""
+
+#. translators: %s: "phone visitors" or "desktop visitors"
+#: src/Admin/Screens.php:439
+#, php-format
+msgid "Whole site (not enough data for this page alone), %s, last 28 days (Chrome UX Report, 75th percentile)."
+msgstr ""
+
+#: src/Admin/Screens.php:454
+msgid "Lab test"
+msgstr ""
+
+#: src/Admin/Screens.php:454
+msgid "Simulated"
+msgstr ""
+
+#: src/Admin/Screens.php:457
+msgid "One simulated visit on a desktop connection, from this test. Useful for spotting changes; can vary a few points between runs."
+msgstr ""
+
+#: src/Admin/Screens.php:458
+msgid "One simulated visit on a mid-range phone with a slow mobile connection, from this test. Useful for spotting changes; can vary a few points between runs."
+msgstr ""
+
+#: src/Admin/Screens.php:519
+#: src/Admin/Screens.php:538
+msgid "Page"
+msgstr ""
+
+#: src/Admin/Screens.php:520
+msgid "All pages"
+msgstr ""
+
+#: src/Admin/Screens.php:525
+#: src/Admin/Screens.php:539
+msgid "Device"
+msgstr ""
+
+#: src/Admin/Screens.php:527
+msgid "All devices"
+msgstr ""
+
+#: src/Admin/Screens.php:531
+msgid "Filter"
+msgstr ""
+
+#: src/Admin/Screens.php:537
+msgid "Tested"
+msgstr ""
+
+#: src/Admin/Screens.php:540
+msgid "Score"
+msgstr ""
+
+#: src/Admin/Screens.php:541
+msgid "LCP (lab)"
+msgstr ""
+
+#: src/Admin/Screens.php:542
+msgid "TBT (lab)"
+msgstr ""
+
+#: src/Admin/Screens.php:543
+msgid "CLS (lab)"
+msgstr ""
+
+#: src/Admin/Screens.php:544
+msgid "LCP (real visitors)"
+msgstr ""
+
+#: src/Admin/Screens.php:545
+msgid "INP (real visitors)"
+msgstr ""
+
+#: src/Admin/Screens.php:546
+msgid "CLS (real visitors)"
+msgstr ""
+
+#: src/Admin/Screens.php:547
+msgid "Run by"
+msgstr ""
+
+#: src/Admin/Screens.php:555
+msgid "No tests yet."
+msgstr ""
+
+#: src/Admin/Screens.php:563
+msgid "Failed"
+msgstr ""
+
+#: src/Admin/Screens.php:580
+#: src/Admin/Screens.php:662
+msgid "Schedule"
+msgstr ""
+
+#: src/Admin/Screens.php:580
+msgid "Manual"
+msgstr ""
+
+#: src/Admin/Screens.php:593
+msgid "‹ Newer"
+msgstr ""
+
+#: src/Admin/Screens.php:594
+msgid "Older ›"
+msgstr ""
+
+#: src/Admin/Screens.php:607
+msgid "Download CSV"
+msgstr ""
+
+#: src/Admin/Screens.php:612
+msgid "Delete all history"
+msgstr ""
+
+#. translators: 1: number of stored tests, 2: number of days kept
+#: src/Admin/Screens.php:618
+#, php-format
+msgid "%1$d test stored. Tests older than %2$d days are removed automatically."
+msgid_plural "%1$d tests stored. Tests older than %2$d days are removed automatically."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin/Screens.php:640
+msgid "Pages to monitor"
+msgstr ""
+
+#: src/Admin/Screens.php:643
+msgid "Pages"
+msgstr ""
+
+#. translators: %d: max number of pages
+#: src/Admin/Screens.php:648
+#, php-format
+msgid "One address per line, up to %d. Only pages on this site. You can also write a path such as /contact/. Pick your most important pages: home, a popular post, a product or contact page."
+msgstr ""
+
+#: src/Admin/Screens.php:654
+msgid "Devices"
+msgstr ""
+
+#: src/Admin/Screens.php:658
+msgid "Google ranks pages on their mobile speed, so keep Mobile on."
+msgstr ""
+
+#: src/Admin/Screens.php:664
+msgid "Scheduled tests"
+msgstr ""
+
+#: src/Admin/Screens.php:665
+msgid "Test my pages automatically"
+msgstr ""
+
+#: src/Admin/Screens.php:666
+msgid "Runs one test at a time in the background (one page every 30 seconds or so), starting around 3am site time. Uses WordPress cron, which needs some site traffic or a real server cron job to run on time."
+msgstr ""
+
+#: src/Admin/Screens.php:668
+msgid "How often"
+msgstr ""
+
+#: src/Admin/Screens.php:670
+msgid "Daily"
+msgstr ""
+
+#: src/Admin/Screens.php:671
+msgid "Weekly"
+msgstr ""
+
+#: src/Admin/Screens.php:673
+msgid "Keep history for"
+msgstr ""
+
+#: src/Admin/Screens.php:674
+msgid "days"
+msgstr ""
+
+#: src/Admin/Screens.php:678
+msgid "Alerts"
+msgstr ""
+
+#: src/Admin/Screens.php:680
+msgid "Email alerts"
+msgstr ""
+
+#: src/Admin/Screens.php:681
+msgid "Email me when a scheduled test shows a speed drop"
+msgstr ""
+
+#: src/Admin/Screens.php:682
+msgid "One email per run at most, listing every page that dropped."
+msgstr ""
+
+#: src/Admin/Screens.php:684
+msgid "Send alerts to"
+msgstr ""
+
+#: src/Admin/Screens.php:687
+msgid "Alert when the score drops by"
+msgstr ""
+
+#: src/Admin/Screens.php:688
+msgid "points or more since the previous test"
+msgstr ""
+
+#: src/Admin/Screens.php:689
+msgid "Lab scores naturally move a few points between runs, so 10 is a sensible minimum."
+msgstr ""
+
+#: src/Admin/Screens.php:691
+msgid "Or falls below"
+msgstr ""
+
+#: src/Admin/Screens.php:693
+msgid "You are told once when a page crosses below this score, not on every run. Set 0 to turn this off."
+msgstr ""
+
+#: src/Admin/Screens.php:697
+msgid "Google API key"
+msgstr ""
+
+#: src/Admin/Screens.php:698
+msgid "Optional but recommended. Tests work without a key, but Google often limits keyless requests, especially from shared hosting. A key is free and allows thousands of tests a day."
+msgstr ""
+
+#: src/Admin/Screens.php:700
+msgid "API key"
+msgstr ""
+
+#. translators: %s: masked key
+#: src/Admin/Screens.php:705
+#, php-format
+msgid "Set in wp-config.php (IWIESP_PSI_API_KEY): %s"
+msgstr ""
+
+#: src/Admin/Screens.php:712
+msgid "Remove the saved key"
+msgstr ""
+
+#: src/Admin/Screens.php:715
+msgid "A key is saved. Leave blank to keep it."
+msgstr ""
+
+#: src/Admin/Screens.php:716
+msgid "Get one in two minutes:"
+msgstr ""
+
+#: src/Admin/Screens.php:717
+msgid "Google's instructions"
+msgstr ""
+
+#: src/Admin/Screens.php:718
+msgid "You can also define IWIESP_PSI_API_KEY in wp-config.php."
+msgstr ""
+
+#: src/Admin/Screens.php:724
+msgid "Privacy: tests call Google PageSpeed Insights directly from your server. Only the page address (and your API key, if set) is sent to Google. No data goes to iWorks or anyone else."
+msgstr ""
+
+#: src/Admin/Screens.php:726
+msgid "Save settings"
+msgstr ""
+
+#. translators: %s: site name
+#: src/Alerts.php:65
+#, php-format
+msgid "Speed Monitor found a speed drop on %s:"
+msgstr ""
+
+#: src/Alerts.php:70
+#: src/Plugin.php:181
+msgid "desktop"
+msgstr ""
+
+#: src/Alerts.php:70
+#: src/Plugin.php:180
+msgid "mobile"
+msgstr ""
+
+#. translators: 1: page URL, 2: device, 3: old score, 4: new score
+#: src/Alerts.php:74
+#, php-format
+msgid "- %1$s (%2$s): score dropped from %3$d to %4$d"
+msgstr ""
+
+#. translators: 1: page URL, 2: device, 3: old score, 4: new score, 5: threshold
+#: src/Alerts.php:83
+#, php-format
+msgid "- %1$s (%2$s): score dropped from %3$d to %4$d, below your alert level of %5$d"
+msgstr ""
+
+#. translators: 1: page URL, 2: device, 3: score, 4: threshold
+#: src/Alerts.php:93
+#, php-format
+msgid "- %1$s (%2$s): score is %3$d, below your alert level of %4$d"
+msgstr ""
+
+#: src/Alerts.php:102
+msgid "Lab scores can move a few points between runs. A drop that shows up on the next test too is worth a look, especially after installing or updating a plugin or theme."
+msgstr ""
+
+#: src/Alerts.php:104
+msgid "See the details and suggested fixes:"
+msgstr ""
+
+#: src/Alerts.php:107
+msgid "Need help fixing it? iWorks builds and speeds up WordPress sites: https://www.iworks.ie"
+msgstr ""
+
+#. translators: 1: site name, 2: number of pages
+#: src/Alerts.php:128
+#, php-format
+msgid "[%1$s] Speed drop on %2$d page"
+msgid_plural "[%1$s] Speed drop on %2$d pages"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Plugin.php:79
+#: src/Plugin.php:92
+#: src/Plugin.php:93
+msgid "Speed Monitor"
+msgstr ""
+
+#: src/Plugin.php:84
+msgid "Scheduled speed tests with history, drop alerts and plain-English fixes, using Google PageSpeed Insights."
+msgstr ""
+
+#: src/Plugin.php:86
+msgid "Tracks your speed over time. Real-visitor and lab numbers are always labelled."
+msgstr ""
+
+#: src/Plugin.php:130
+msgid "Open"
+msgstr ""
+
+#. translators: 1: current test number, 2: total tests, 3: page path, 4: device
+#: src/Plugin.php:179
+#, php-format
+msgid "Testing %1$d of %2$d: %3$s (%4$s). Each test takes 15–60 seconds…"
+msgstr ""
+
+#. translators: %d: number of failed tests
+#: src/Plugin.php:183
+#, php-format
+msgid "Finished with %d failed test. Reloading…"
+msgstr ""
+
+#. translators: %d: number of failed tests
+#: src/Plugin.php:185
+#, php-format
+msgid "Finished with %d failed tests. Reloading…"
+msgstr ""
+
+#: src/Plugin.php:186
+msgid "All tests finished. Reloading…"
+msgstr ""
+
+#: src/Plugin.php:187
+msgid "Test failed:"
+msgstr ""
+
+#: src/Plugin.php:188
+msgid "The request failed. Your server may have timed out; try again, or rely on scheduled tests."
+msgstr ""
+
+#: src/Plugin.php:189
+msgid "Delete all stored test history? This cannot be undone."
+msgstr ""
+
+#: src/Psi/Advice.php:85
+msgid "Files are holding up the first paint"
+msgstr ""
+
+#: src/Psi/Advice.php:86
+msgid "The browser has to download some CSS and JavaScript files before it can show anything, so visitors stare at a blank screen."
+msgstr ""
+
+#: src/Psi/Advice.php:87
+msgid "Defer or delay non-essential scripts, inline the small amount of CSS needed for the top of the page, and remove plugins that load files on every page. A good caching or optimisation plugin can do much of this."
+msgstr ""
+
+#: src/Psi/Advice.php:91
+msgid "Too much JavaScript the page does not use"
+msgstr ""
+
+#: src/Psi/Advice.php:92
+msgid "Every script has to be downloaded and processed, even if the page never uses it. This slows loading and makes the page feel sluggish, especially on phones."
+msgstr ""
+
+#: src/Psi/Advice.php:93
+msgid "Find which plugins or theme features add the scripts and only load them on pages that need them. Remove plugins you no longer use, and avoid sliders, page builders or widgets that load large libraries everywhere."
+msgstr ""
+
+#: src/Psi/Advice.php:97
+msgid "Too much CSS the page does not use"
+msgstr ""
+
+#: src/Psi/Advice.php:98
+msgid "Large stylesheets from themes and plugins delay the first paint, even though most of the rules are for other pages."
+msgstr ""
+
+#: src/Psi/Advice.php:99
+msgid "Use an optimisation plugin that removes unused CSS per page, or stop plugins loading their styles on pages where they are not used."
+msgstr ""
+
+#: src/Psi/Advice.php:103
+msgid "CSS or JavaScript files are not minified"
+msgstr ""
+
+#: src/Psi/Advice.php:104
+msgid "Unminified files contain spaces and comments that make them bigger than they need to be."
+msgstr ""
+
+#: src/Psi/Advice.php:105
+msgid "Turn on minification in your caching or optimisation plugin."
+msgstr ""
+
+#: src/Psi/Advice.php:109
+msgid "Images are bigger than they need to be"
+msgstr ""
+
+#: src/Psi/Advice.php:110
+msgid "Large images are the most common reason pages are slow. Visitors download far more data than the screen can show."
+msgstr ""
+
+#: src/Psi/Advice.php:111
+msgid "Resize images before uploading, serve WebP or AVIF, and make sure your theme uses WordPress's responsive image sizes. An image optimisation plugin can convert existing images."
+msgstr ""
+
+#: src/Psi/Advice.php:115
+msgid "Images below the fold load straight away"
+msgstr ""
+
+#: src/Psi/Advice.php:116
+msgid "Images nobody can see yet compete with the content at the top of the page."
+msgstr ""
+
+#: src/Psi/Advice.php:117
+msgid "Make sure images further down the page use lazy loading (WordPress adds it automatically unless a theme or plugin removes it)."
+msgstr ""
+
+#: src/Psi/Advice.php:121
+msgid "Your server is slow to respond"
+msgstr ""
+
+#: src/Psi/Advice.php:122
+msgid "Nothing can start until the server sends the first byte of the page. A slow response delays everything else."
+msgstr ""
+
+#: src/Psi/Advice.php:123
+msgid "Turn on page caching, use a recent PHP version, and check for slow plugins. If it is still slow, your hosting plan may be too small or overloaded."
+msgstr ""
+
+#: src/Psi/Advice.php:127
+msgid "The page redirects before loading"
+msgstr ""
+
+#: src/Psi/Advice.php:128
+msgid "Each redirect adds a full round trip before the page can start loading."
+msgstr ""
+
+#: src/Psi/Advice.php:129
+msgid "Link directly to the final address (for example https and with or without www, matching your WordPress Address setting)."
+msgstr ""
+
+#: src/Psi/Advice.php:133
+msgid "Text files are sent uncompressed"
+msgstr ""
+
+#: src/Psi/Advice.php:134
+msgid "HTML, CSS and JavaScript compress very well. Sending them uncompressed wastes bandwidth."
+msgstr ""
+
+#: src/Psi/Advice.php:135
+msgid "Ask your host to enable gzip or Brotli compression, or enable it in your caching plugin."
+msgstr ""
+
+#: src/Psi/Advice.php:139
+msgid "Browser caching is too short"
+msgstr ""
+
+#: src/Psi/Advice.php:140
+msgid "Returning visitors download the same files again instead of reusing the copy they already have."
+msgstr ""
+
+#: src/Psi/Advice.php:141
+msgid "Set long cache lifetimes for images, CSS, JavaScript and fonts, through your caching plugin or your host."
+msgstr ""
+
+#: src/Psi/Advice.php:145
+msgid "The main image or heading appears late"
+msgstr ""
+
+#: src/Psi/Advice.php:146
+msgid "Largest Contentful Paint is the moment visitors feel the page has loaded. It is one of Google's Core Web Vitals."
+msgstr ""
+
+#: src/Psi/Advice.php:147
+msgid "Do not lazy-load the main (hero) image, give it high priority, make it smaller, and avoid sliders or animations at the top of the page."
+msgstr ""
+
+#: src/Psi/Advice.php:151
+msgid "The page jumps around while loading"
+msgstr ""
+
+#: src/Psi/Advice.php:152
+msgid "Content that moves as it loads makes people tap the wrong thing. Layout shift is one of Google's Core Web Vitals."
+msgstr ""
+
+#: src/Psi/Advice.php:153
+msgid "Give images, videos, embeds and ads a fixed width and height, and avoid banners or cookie notices that push content down after it appears."
+msgstr ""
+
+#: src/Psi/Advice.php:157
+msgid "Text is hidden while web fonts load"
+msgstr ""
+
+#: src/Psi/Advice.php:158
+msgid "Visitors see blank space instead of text until custom fonts arrive."
+msgstr ""
+
+#: src/Psi/Advice.php:159
+msgid "Use font-display: swap, host fonts locally, and load fewer font weights."
+msgstr ""
+
+#: src/Psi/Advice.php:163
+msgid "Third-party scripts are slowing the page"
+msgstr ""
+
+#: src/Psi/Advice.php:164
+msgid "Chat widgets, trackers, embeds and ad scripts run on other companies' servers and can block your page."
+msgstr ""
+
+#: src/Psi/Advice.php:165
+msgid "Remove services you do not use, delay the rest until after the page loads, and replace heavy embeds (like videos) with a lightweight preview."
+msgstr ""
+
+#: src/Psi/Advice.php:169
+msgid "Scripts keep the browser busy"
+msgstr ""
+
+#: src/Psi/Advice.php:170
+msgid "While JavaScript runs, the page cannot respond to taps and clicks. Phones feel this the most."
+msgstr ""
+
+#: src/Psi/Advice.php:171
+msgid "Reduce the number of plugins that add front-end scripts and delay non-essential scripts until the visitor interacts."
+msgstr ""
+
+#: src/Psi/Advice.php:175
+msgid "The page has a very large amount of HTML"
+msgstr ""
+
+#: src/Psi/Advice.php:176
+msgid "Thousands of elements take longer to lay out and make every interaction slower. Page builders often cause this."
+msgstr ""
+
+#: src/Psi/Advice.php:177
+msgid "Simplify the page layout, remove hidden sections, and paginate long lists."
+msgstr ""
+
+#: src/Psi/Advice.php:181
+msgid "The page is very heavy"
+msgstr ""
+
+#: src/Psi/Advice.php:182
+msgid "The total download is large, which is slow and costly on mobile data."
+msgstr ""
+
+#: src/Psi/Advice.php:183
+msgid "Start with the biggest files: usually images, videos, and large scripts."
+msgstr ""
+
+#: src/Psi/Advice.php:187
+msgid "Files load one after another"
+msgstr ""
+
+#: src/Psi/Advice.php:188
+msgid "When one file has to load before the browser discovers the next, the delays add up."
+msgstr ""
+
+#: src/Psi/Advice.php:189
+msgid "Preload key files (such as the main font or hero image), preconnect to important third-party domains, and reduce nested CSS imports."
+msgstr ""
+
+#: src/Psi/Advice.php:193
+msgid "The page is not set up for mobile screens"
+msgstr ""
+
+#: src/Psi/Advice.php:194
+msgid "Without a proper viewport tag, phones add a delay to taps and show a zoomed-out page."
+msgstr ""
+
+#: src/Psi/Advice.php:195
+msgid "Make sure your theme outputs a viewport meta tag. Most modern themes do."
+msgstr ""
+
+#: src/Psi/Advice.php:227
+msgid "Performance issue"
+msgstr ""
+
+#. translators: %s: error message from the HTTP library
+#: src/Psi/Client.php:64
+#, php-format
+msgid "Could not reach Google PageSpeed Insights: %s"
+msgstr ""
+
+#: src/Psi/Client.php:102
+msgid "Google's daily limit for your API key was reached. Tests will continue tomorrow."
+msgstr ""
+
+#: src/Psi/Client.php:103
+msgid "Google is limiting tests without an API key. Add your own free API key in Settings for reliable testing."
+msgstr ""
+
+#: src/Psi/Client.php:106
+msgid "Google rejected the API key. Check it in Settings and make sure the PageSpeed Insights API is enabled for it."
+msgstr ""
+
+#: src/Psi/Client.php:109
+msgid "Google refused the request. Make sure the PageSpeed Insights API is enabled for your API key and the key is not restricted to other sites or IP addresses."
+msgstr ""
+
+#: src/Psi/Client.php:113
+msgid "Google could not load the page. It must be publicly reachable on the internet (local, staging and password-protected sites cannot be tested)."
+msgstr ""
+
+#. translators: 1: HTTP status code, 2: Google's error message
+#: src/Psi/Client.php:118
+#, php-format
+msgid "Google PageSpeed Insights returned an error (%1$d): %2$s"
+msgstr ""
+
+#. translators: %d: HTTP status code
+#: src/Psi/Client.php:121
+#, php-format
+msgid "Google PageSpeed Insights returned an unexpected response (HTTP %d). Try again later."
+msgstr ""
+
+#: src/Runner.php:59
+msgid "Google PageSpeed Insights returned no result."
+msgstr ""
+
+#: src/Runner.php:64
+msgid "Lighthouse could not score this page."
+msgstr ""
+
+#. translators: %s: Lighthouse error message
+#: src/Runner.php:70
+#, php-format
+msgid "Google could not test the page: %s"
+msgstr ""
+
+#: src/Support/Metrics.php:39
+msgid "Largest Contentful Paint"
+msgstr ""
+
+#: src/Support/Metrics.php:40
+msgid "Interaction to Next Paint"
+msgstr ""
+
+#: src/Support/Metrics.php:41
+msgid "Cumulative Layout Shift"
+msgstr ""
+
+#: src/Support/Metrics.php:42
+msgid "First Contentful Paint"
+msgstr ""
+
+#: src/Support/Metrics.php:43
+msgid "Time to First Byte"
+msgstr ""
+
+#: src/Support/Metrics.php:44
+msgid "Total Blocking Time"
+msgstr ""
+
+#: src/Support/Metrics.php:45
+msgid "Speed Index"
+msgstr ""
+
+#: src/Support/Metrics.php:56
+msgid "How long until the main content (usually the biggest image or heading) appears."
+msgstr ""
+
+#: src/Support/Metrics.php:57
+msgid "How quickly the page reacts when someone taps or clicks."
+msgstr ""
+
+#: src/Support/Metrics.php:58
+msgid "How much the page jumps around while loading. Lower is better."
+msgstr ""
+
+#: src/Support/Metrics.php:59
+msgid "How long until anything at all appears on screen."
+msgstr ""
+
+#: src/Support/Metrics.php:60
+msgid "How long your server takes to start sending the page."
+msgstr ""
+
+#: src/Support/Metrics.php:61
+msgid "How long scripts keep the page too busy to respond while it loads."
+msgstr ""
+
+#: src/Support/Metrics.php:62
+msgid "How quickly the visible part of the page fills in."
+msgstr ""
+
+#: src/Support/Metrics.php:97
+msgid "Good"
+msgstr ""
+
+#: src/Support/Metrics.php:99
+msgid "Needs improvement"
+msgstr ""
+
+#: src/Support/Metrics.php:101
+msgid "Poor"
+msgstr ""
+
+#. translators: %s: number of seconds, e.g. 2.4
+#: src/Support/Metrics.php:145
+#, php-format
+msgid "%s s"
+msgstr ""
+
+#. translators: %s: number of milliseconds
+#: src/Support/Metrics.php:148
+#, php-format
+msgid "%s ms"
+msgstr ""

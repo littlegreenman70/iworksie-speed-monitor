@@ -1,0 +1,95 @@
+{
+	"name": "iworksie/speed-monitor",
+	"description": "Scheduled speed tests with history, drop alerts and plain-English fixes, using Google PageSpeed Insights.",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "iWorks.ie",
+			"homepage": "https://www.iworks.ie"
+		}
+	],
+	"require": {
+		"php": ">=7.4",
+		"iworksie/tools-core": "^1.1 || @dev"
+	},
+	"require-dev": {
+		"brianhenryie/strauss": "^0.32",
+		"wp-coding-standards/wpcs": "^3.1",
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"phpstan/phpstan": "^1.11",
+		"szepeviktor/phpstan-wordpress": "^1.3",
+		"phpunit/phpunit": "^9.6",
+		"yoast/phpunit-polyfills": "^2.0",
+		"brain/monkey": "^2.6"
+	},
+	"repositories": [
+		{
+			"type": "path",
+			"url": "../iworks-tools-core",
+			"options": {
+				"symlink": true
+			}
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/littlegreenman70/iworks-tools-core"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"IWorksIE\\SpeedMonitor\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"IWorksIE\\SpeedMonitor\\Tests\\": "tests/"
+		}
+	},
+	"extra": {
+		"strauss": {
+			"target_directory": "vendor-prefixed",
+			"namespace_prefix": "IWorksIE\\SpeedMonitor\\Vendor\\",
+			"classmap_prefix": "IWorksIE_SpeedMonitor_",
+			"constant_prefix": "IWIESP_",
+			"packages": [
+				"iworksie/tools-core"
+			],
+			"delete_vendor_packages": false
+		}
+	},
+	"scripts": {
+		"prefix-namespaces": [
+			"@php vendor/bin/strauss",
+			"@php bin/copy-core-assets.php vendor-prefixed"
+		],
+		"post-install-cmd": [
+			"@prefix-namespaces"
+		],
+		"post-update-cmd": [
+			"@prefix-namespaces"
+		],
+		"lint": "phpcs",
+		"analyse": "phpstan analyse --memory-limit=1G",
+		"test:unit": "IWIESP_TESTSUITE=unit phpunit --testsuite unit",
+		"test:integration": [
+			"IWIESP_TESTSUITE=integration phpunit --testsuite integration",
+			"IWIESP_TESTSUITE=integration phpunit --testsuite integration --group ajax"
+		],
+		"test": [
+			"@test:unit",
+			"@test:integration"
+		],
+		"build": "@php bin/build.php"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"brianhenryie/strauss": true
+		},
+		"sort-packages": true
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
